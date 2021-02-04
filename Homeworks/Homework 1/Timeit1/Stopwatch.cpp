@@ -22,7 +22,7 @@ Stopwatch::Stopwatch() {
 
 
 //copy constructor
-Stopwatch::Stopwatch(const Stopwatch& old) {
+Stopwatch::Stopwatch(const Stopwatch& old): Time_S(old.Time_S), Time_MS(old.Time_MS) {
 
 }
 

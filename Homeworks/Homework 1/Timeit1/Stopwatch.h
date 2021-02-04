@@ -32,6 +32,7 @@ public:
 	void Stop();
 
 private:
+	double Time_S, Time_MS;
 	
 	
 };
