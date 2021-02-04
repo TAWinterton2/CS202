@@ -31,8 +31,15 @@ public:
 	//End (Ends stopwatch)
 	void Stop();
 
+	//Time_Seconds (Calculates total time elapsed in Seconds)
+	void Time_Seconds();
+
+	//Time_Milliseconds (Calculates total time elapsed in Miliseconds)
+
+	void Time_Milliseconds();
+
 private:
-	double Time_S, Time_MS;
+	double Time_S, Time_MS, Elapsed, Start_time, End_Time;
 	
 	
 };
