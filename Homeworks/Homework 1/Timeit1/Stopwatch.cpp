@@ -23,5 +23,9 @@ Stopwatch::Stopwatch(const Stopwatch& old) {
 }
 
 
+//destructor 
+Stopwatch::~Stopwatch() {
+
+}
 
 
