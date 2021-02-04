@@ -17,6 +17,11 @@ Stopwatch::Stopwatch() {
 }
 
 
+//copy constructor
+Stopwatch::Stopwatch(const Stopwatch& old) {
+
+}
+
 
 
 
