@@ -39,8 +39,8 @@ public:
 	void Time_Milliseconds();
 
 private:
-	double Time_S, Time_MS, Elapsed, Start_time, End_Time;
-	
+	double Time_S, Time_MS;
+	time_point<std::chrono::system_clock> t_start, t_end;
 	
 };
 
