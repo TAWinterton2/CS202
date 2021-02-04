@@ -48,12 +48,21 @@ void Stopwatch::Stop() {
 //Time_Seconds (Calculates total time elapsed in Seconds)
 void Stopwatch::Time_Seconds(){
 	std::chrono::duration<double> elapsed_seconds = t_end - t_start;
-	cout << elapsed_seconds.count() << "s\n";
+	
+	auto Time_S = elapsed_seconds;
+
+	cout << Time_S.count() << "s\n";
 }
 
 //Time_Milliseconds (Calculates total time elapsed in Miliseconds)
 
 void Stopwatch::Time_Milliseconds(){
+	std::chrono::duration<double> elapsed_seconds = t_end - t_start;
 
+	
+	
+	auto Time_MS = elapsed_seconds * 1000;
+
+	cout << Time_MS.count() << "Ms\n";
 }
 

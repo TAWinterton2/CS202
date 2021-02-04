@@ -26,11 +26,14 @@ int main() {
 	std::cout << "f(42) = " << fibonacci(42) << '\n';
 	timer_1.Stop();
 
-	cout << "Elapsed time: ";
+	cout << "Elapsed time (Seconds): ";
 	timer_1.Time_Seconds();
+	cout << endl;
 
+	cout << "Elasped Time (Milliseconds): ";
+	timer_1.Time_Milliseconds();
+	cout << endl;
 
-	system("pause");
 	return 0;
 
 }
