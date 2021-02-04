@@ -11,7 +11,7 @@ using std::endl;
 using std::cout;
 using std::string;
 using std::vector;
-using namespace std::chrono;
+
 
 
 
@@ -48,7 +48,7 @@ void Stopwatch::Stop() {
 //Time_Seconds (Calculates total time elapsed in Seconds)
 void Stopwatch::Time_Seconds(){
 	std::chrono::duration<double> elapsed_seconds = t_end - t_start;
-
+	cout << elapsed_seconds.count() << "s\n";
 }
 
 //Time_Milliseconds (Calculates total time elapsed in Miliseconds)

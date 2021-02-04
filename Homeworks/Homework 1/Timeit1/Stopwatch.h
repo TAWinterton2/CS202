@@ -1,17 +1,19 @@
 #pragma once
 #ifndef STOPWATCH_HPP
 #define STOPWATCH_HPP
+
 #include<iostream>
 #include<algorithm>
 #include<iomanip>
 #include<string>
+#include<chrono>
 #include<vector>
 
 using std::endl;
 using std::cout;
 using std::string;
 using std::vector;
-using namespace std::chrono;
+
 
 class Stopwatch
 {
@@ -40,7 +42,7 @@ public:
 
 private:
 	double Time_S, Time_MS;
-	time_point<std::chrono::system_clock> t_start, t_end;
+	std::chrono::time_point<std::chrono::system_clock> t_start, t_end;
 	
 };
 
