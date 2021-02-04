@@ -1,12 +1,16 @@
 #include "Stopwatch.h"
 #include<iostream>
-#include<chrono>
+#include<algorithm>
 #include<iomanip>
+#include<string>
+#include<chrono>
+#include<vector>
 
-
-using std::cout;
-using std::cin;
 using std::endl;
+using std::cout;
+using std::string;
+using std::vector;
+using namespace std::chrono;
 
 int main() {
 	
