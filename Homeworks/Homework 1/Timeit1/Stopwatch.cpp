@@ -51,7 +51,7 @@ void Stopwatch::Time_Seconds(){
 	
 	auto Time_S = elapsed_seconds;
 
-	cout << Time_S.count() << "s\n";
+	cout << Time_S.count() << "Seconds \n";
 }
 
 //Time_Milliseconds (Calculates total time elapsed in Miliseconds)
@@ -63,6 +63,6 @@ void Stopwatch::Time_Milliseconds(){
 	
 	auto Time_MS = elapsed_seconds * 1000;
 
-	cout << Time_MS.count() << "Ms\n";
+	cout << Time_MS.count() << "Milliseconds\n";
 }
 
