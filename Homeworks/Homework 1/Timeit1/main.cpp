@@ -38,7 +38,7 @@ int main() {
 	Stopwatch timer_3;
 	Stopwatch timer_4;
 	
-	
+	timer_2.Start();
 
 	bool result;
 	random_device rd;
@@ -50,6 +50,7 @@ int main() {
 	
 	int numbertofind = 5;
 	std::generate(data.begin(), data.end(), gen);
+
 
 	//Binary_search
 	cout << "Binary Search" << endl;
@@ -81,8 +82,14 @@ int main() {
 		cout << endl;
 	}
 
+
+	//Search
+
 	while (cin.get() != '\n');
 	
+	timer_2.Stop();
+	cout << "hey!" << endl;
+	timer_2.Time_Seconds();
 
 
 	return 0;

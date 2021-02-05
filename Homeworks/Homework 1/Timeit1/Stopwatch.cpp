@@ -17,7 +17,6 @@ using std::vector;
 
 //default constructor 
 Stopwatch::Stopwatch() {
-	cout << "Stopwatch created" << endl;
 }
 
 
@@ -29,7 +28,6 @@ Stopwatch::Stopwatch(const Stopwatch& old):t_start(old.t_start), t_end(old.t_end
 
 //destructor 
 Stopwatch::~Stopwatch() {
-	cout << "Stopwatch Deleted" << endl;
 }
 
 
@@ -47,22 +45,17 @@ void Stopwatch::Stop() {
 
 //Time_Seconds (Calculates total time elapsed in Seconds)
 void Stopwatch::Time_Seconds(){
-	std::chrono::duration<double> elapsed_seconds = t_end - t_start;
-	
-	auto Time_S = elapsed_seconds;
-
-	cout << Time_S.count() << " Seconds \n";
+	auto diff = t_end - t_start;
+	cout << std::chrono::duration<double>(diff).count();
+	std::time_t end_time = std::chrono::system_clock::to_time_t(t_end);
+	cout << "Finished computation at " << std::ctime(&end_time) << '\n';
+	cout << "Elapsed time: " << diff.count() << "s\n";
 }
 
 //Time_Milliseconds (Calculates total time elapsed in Miliseconds)
 
 void Stopwatch::Time_Milliseconds(){
-	std::chrono::duration<double> elapsed_seconds = t_end - t_start;
-
-	
-	
-	auto Time_MS = elapsed_seconds * 1000;
-
-	cout << Time_MS.count() << " Milliseconds\n";
+	auto diff = t_end - t_start;
+	cout << std::chrono::duration<double, std::milli>(diff).count();
 }
 
