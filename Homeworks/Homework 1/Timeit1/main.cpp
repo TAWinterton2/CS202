@@ -19,15 +19,6 @@ using namespace std::chrono;
 using std::mt19937;
 using std::random_device;
 
-int gen() {
-	random_device rd;
-	mt19937 mt(rd()); //PRNG - unpredictable seed
-	std::uniform_int_distribution<int> dist(0, 5); // range from 0 to 50 
-	static int i = dist(mt);
-	return i;
-}
-
-
 
 int main() {
 	//Declare and generate PRNGS and timers for each search algorithm
@@ -40,14 +31,30 @@ int main() {
 
 	bool result;
 	random_device rd;
-	mt19937 mt(rd()); //PRNG - unpredictable seed
-	std::uniform_int_distribution<int> dist(0, 5); // range from 0 to 50 
+	mt19937 mt{ rd() }; //PRNG - unpredictable seed
+	std::uniform_int_distribution<int> dist(0, 5); // range from 0 to 5
 
-	//create vector of 10 numbers 
-	vector<int> data(10);
+	auto gen = [&dist, &mt]() {
+		return dist(mt);
+	};
 	
+	//Generate A vector of random numbers 
+	vector<int> data(10);
+	std::generate(begin(data), end(data), gen);
+	for (auto i : data) {
+		cout << i << endl;
+	}
+
 	int numbertofind = 5;
-	std::generate(data.begin(), data.end(), gen);
+	
+
+	
+	//std::generate(data.begin(), data.end(), gen);
+
+	
+
+
+
 
 
 	//std::Binary_search
