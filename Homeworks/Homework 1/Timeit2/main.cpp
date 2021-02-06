@@ -6,7 +6,7 @@
 #include<chrono>
 #include<vector>
 #include<fstream>
-
+#include<algorithm>
 #include"Stopwatch.h"
 
 
@@ -21,6 +21,8 @@ using std::ifstream;
 int main() {
 
 	std::string text;
+	std::string text2find = "The holy Creator usward sent him,";
+
 	Stopwatch timer;
 
 	vector<string> booktxt;
@@ -47,8 +49,29 @@ int main() {
 	cout << "Elapsed time Milliseconds: ";
 	timer.Time_Milliseconds();
 
-	for (auto a : booktxt) {
-		cout << a << ' ';
-	}
+	while (cin.get() != '\n');
+	cout << "Find a string of text in Book " << endl;
+	cout << "Press Enter to begin" << endl;
+	timer.Start();
+	if (std::find(booktxt.begin(), booktxt.end(), text2find) != booktxt.end()) {
+		cout << "Text found!" << endl;
+		timer.Stop();
+		cout << endl;
+		cout << "Elasped time seconds: ";
+		timer.Time_Seconds();
+		cout << endl;
+		cout << "Elapsed time Milliseconds: ";
+		timer.Time_Milliseconds();
 
+	}
+	else {
+		cout << "Text not found" << endl;
+		timer.Stop();
+		cout << "Elasped time seconds: ";
+		timer.Time_Seconds();
+		cout << endl;
+		cout << "Elapsed time Milliseconds: ";
+		timer.Time_Milliseconds();
+
+	}
 }
