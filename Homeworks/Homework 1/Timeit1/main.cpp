@@ -15,12 +15,13 @@ using std::cout;
 using std::cin;
 using std::string;
 using std::vector;
-using namespace std::chrono;
 using std::mt19937;
 using std::random_device;
-
+using namespace std::chrono;
 
 int main() {
+	int user_input, vecsize;
+
 	//Declare and generate PRNGS and timers for each algorithm 
 	Stopwatch timer;
 	bool result;
@@ -32,7 +33,52 @@ int main() {
 	};
 	
 	//Generate A vector of random numbers 
-	cout << "Vector of 10 Elements" << endl;
+	cout << "Enter in size of vector" << endl;
+	cout << "1) 10 " << endl;
+	cout << "2) 100 " << endl;
+	cout << "3) 1k " << endl;
+	cout << "4) 10k " << endl;
+	cout << "5) 100k " << endl;
+	cout << "6) 1M " << endl;
+	cout << "7) 10M " << endl;
+	cout << "8) 100M " << endl;
+	cout << "9) 1B " << endl;
+	cin >> user_input;
+	switch (user_input) {
+	case 1:
+		vecsize = 10;
+		break;
+	case 2:
+		vecsize = 100;
+		break;
+	case 3:
+		vecsize = 1000;
+		break;
+	case 4:
+		vecsize = 10000;
+		break;
+	case 5:
+		vecsize = 10000;
+		break;
+	case 6:
+		vecsize = 100000;
+		break;
+	case 7:
+		vecsize = 10000000;
+		break;
+	case 8:
+		vecsize = 100000000;
+		break;
+	case 9:
+		vecsize = 1000000000;
+		break;
+	default:
+		cout << "invalid option";
+		return 0;
+	}
+
+
+
 
 	vector<int> data(10);
 	vector<int> data2(10);
