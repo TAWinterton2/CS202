@@ -7,6 +7,8 @@
 #include<vector>
 #include<fstream>
 #include<algorithm>
+#include<list>
+#include<iterator>
 #include"Stopwatch.h"
 
 
