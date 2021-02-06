@@ -1,4 +1,3 @@
-#include "Stopwatch.h"
 
 #include<iostream>
 #include<algorithm>
@@ -6,6 +5,8 @@
 #include<string>
 #include<chrono>
 #include<vector>
+#include"Stopwatch.h"
+
 
 using std::endl;
 using std::cout;
