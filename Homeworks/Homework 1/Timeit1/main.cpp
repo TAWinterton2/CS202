@@ -50,7 +50,7 @@ int main() {
 	std::generate(data.begin(), data.end(), gen);
 
 
-	//Binary_search
+	//std::Binary_search
 	cout << "Binary Search" << endl;
 	cout << "Press Enter to begin " << endl;
 	while (cin.get() != '\n');
@@ -79,6 +79,37 @@ int main() {
 		timer.Time_Milliseconds();
 		cout << endl;
 	}
+	//std::count 
+	while (cin.get() != '\n');
+	cout << endl;
+
+	cout << "std::count" << endl;
+	cout << "Press Enter to Begin" << endl;
+
+	timer.Start();
+	result = std::count(data.begin(), data.end(), numbertofind);
+	timer.Stop();
+	cout << "Search Finished, Press enter to display times " << endl;
+	while (cin.get() != '\n');
+
+	if (result == true) {
+		cout << "Element " << numbertofind << "Exist in Vector." << endl;
+		cout << "Time taken: ";
+		timer.Time_Seconds();
+		cout << endl;
+		timer.Time_Milliseconds();
+		cout << endl;
+
+	}
+	if (result == false) {
+		cout << "Element " << numbertofind << " Doesn't exist in vector. " << endl;
+		cout << "Time taken: ";
+		timer.Time_Seconds();
+		cout << endl;
+		timer.Time_Milliseconds();
+		cout << endl;
+	}
+	while (cin.get() != '\n');
 
 	//Sorted vector
 	cout << "Sorted" << endl;
