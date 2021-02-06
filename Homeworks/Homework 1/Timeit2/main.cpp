@@ -19,6 +19,7 @@ using std::string;
 using std::vector;
 using std::fstream;
 using std::ifstream;
+using std::list;
 
 int main() {
 	//string text and text to find in book 
@@ -34,6 +35,9 @@ int main() {
 	cout << "Press enter to begin" << endl;
 	while (cin.get() != '\n');
 
+	//list to read in text file
+	list <string> booktxt_list;
+
 	timer.Start();
 
 	//read in file and push string into vector
@@ -43,9 +47,11 @@ int main() {
 		cout << "Error in opening file" << endl;
 	}
 	else {
+
 		while (std::getline(Book, text)) {
 			booktxt.push_back(text);
 		}
+
 	}
 	timer.Stop();
 
@@ -59,7 +65,32 @@ int main() {
 
 	while (cin.get() != '\n');
 
-	//find text in from book
+	//read in file with list
+
+	cout << "Reading in Beowulf.txt" << endl;
+	cout << "Press enter to begin" << endl;
+	while (cin.get() != '\n');
+
+	if (!Book) {
+		cout << "Error in opening file" << endl;
+	}
+	else {
+		timer.Start();
+		while (std::getline(Book, text)) {
+			booktxt_list.push_front(text);
+		}
+
+	}
+	timer.Stop();
+	
+	cout << "Finished Reading in Text file" << endl;;
+	cout << "Elasped time seconds: ";
+	timer.Time_Seconds();
+	cout << endl;
+	cout << "Elapsed time Milliseconds: ";
+	timer.Time_Milliseconds();
+
+	//find text from book (Vector) 
 	cout << "Find a string of text in Book " << endl;
 	cout << "Press Enter to begin" << endl;
 	while (cin.get() != '\n');
@@ -85,4 +116,7 @@ int main() {
 		timer.Time_Milliseconds();
 
 	}
+
+	while (cin.get() != '\n');
+	//find text from book (list) 
 }
