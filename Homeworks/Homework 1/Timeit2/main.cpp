@@ -22,9 +22,47 @@ using std::ifstream;
 using std::list;
 
 int main() {
+	
+	int menu_select;
+	string user_book;
+	string text2find;
+	cout << "Time it 2 Test: " << '\n';
+	cout << "Please select a book " << endl;
+	cout << "1) Beowulf" << '\n';
+	cout << "2) Grimm Brothers: Fairy Tales" << '\n';
+	cout << "3) Scarlet Letter" << '\n';
+	cout << "4) Canterbury Tales" << '\n';
+	cout << "5) Alice in Wonderland" << '\n';
+	cin >> menu_select;
+
+	switch (menu_select) {
+	case 1:
+		user_book = "Beowulf.txt";
+		text2find = "{I put a stop to the outrages of the sea-monsters.}";
+		break;
+	case 2:
+		user_book = "GrimBros.txt";
+		break;
+	case 3:
+		user_book = "ScarletLetter.txt";
+		break;
+	case 4:
+		user_book = "Canterbury.txt";
+		break;
+	case 5:
+		user_book = "Alice.txt";
+		break;
+	default:
+		cout << "Invalid Choice " << endl;
+		return 0;
+
+
+
+	}
+
 	//string text and text to find in book 
 	std::string text;
-	std::string text2find = "{I put a stop to the outrages of the sea-monsters.}";
+	
 
 	//Stopwatch class called 
 	Stopwatch timer;
