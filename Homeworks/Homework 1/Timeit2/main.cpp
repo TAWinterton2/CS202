@@ -162,7 +162,7 @@ int main() {
 
 
 	//find text from book (Vector) 
-	cout << "Find a string of text in Book " << endl;
+	cout << "Finding Text in book  " << endl;
 	timer.Start();
 	if (std::find(booktxt_vec.begin(), booktxt_vec.end(), text2find) != booktxt_vec.end()) {
 		cout << "Text found!" << endl;
@@ -186,9 +186,7 @@ int main() {
 	cout << endl;
 
 	//find text from book (list) 
-	cout << "Find a string of text in Book " << endl;
-	
-
+	cout << "Finding text in book  " << endl;
 	//list iterator
 	list<string>::iterator it;
 	timer.Start();
@@ -198,6 +196,33 @@ int main() {
 
 	//check if it points to end or not
 	if (it != booktxt_list.end()) {
+		cout << "Text found! " << endl;
+		timer.Stop();
+		cout << "Elasped time seconds: ";
+		timer.Time_Seconds();
+		cout << "Elapsed time Milliseconds: ";
+		timer.Time_Milliseconds();
+	}
+	else {
+		cout << "Text not found " << endl;
+		timer.Stop();
+		cout << "Elasped time seconds: ";
+		timer.Time_Seconds();
+		cout << "Elapsed time Milliseconds: ";
+		timer.Time_Milliseconds();
+	}
+
+	//find text from book (deque)
+	cout << "Finding Text in book " << endl;
+	//deque iterator
+	deque<string>::iterator it2;
+	timer.Start();
+
+	//Fethc iterator with string in text2find
+	it2 = std::find(booktxt_deque.begin(), booktxt_deque.end(), text2find);
+
+	//check if it2 points to end or not
+	if (it2 != booktxt_deque.end()) {
 		cout << "Text found! " << endl;
 		timer.Stop();
 		cout << "Elasped time seconds: ";
