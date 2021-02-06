@@ -83,8 +83,7 @@ int main() {
 	ifstream Book_vec(user_book);
 	ifstream Book_list(user_book);
 	ifstream Book_dq(user_book);
-	//list to read in text file
-	list <string> booktxt_list;
+	
 
 
 	//Reading into Vector 
@@ -137,7 +136,7 @@ int main() {
 	//Reading into deque
 	cout << "Reading Book into Deque" << endl;
 	timer.Start();
-	if (!Book_vec) {
+	if (!Book_dq) {
 		cout << "Error in opening file" << endl;
 	}
 	else {
@@ -162,7 +161,7 @@ int main() {
 
 
 	//find text from book (Vector) 
-	cout << "Finding Text in book  " << endl;
+	cout << "Finding Text form book in Vector  " << endl;
 	timer.Start();
 	if (std::find(booktxt_vec.begin(), booktxt_vec.end(), text2find) != booktxt_vec.end()) {
 		cout << "Text found!" << endl;
@@ -186,7 +185,7 @@ int main() {
 	cout << endl;
 
 	//find text from book (list) 
-	cout << "Finding text in book  " << endl;
+	cout << "Finding text from book in List " << endl;
 	//list iterator
 	list<string>::iterator it;
 	timer.Start();
@@ -211,9 +210,10 @@ int main() {
 		cout << "Elapsed time Milliseconds: ";
 		timer.Time_Milliseconds();
 	}
+	cout << endl;
 
 	//find text from book (deque)
-	cout << "Finding Text in book " << endl;
+	cout << "Finding text from book in Deque " << endl;
 	//deque iterator
 	deque<string>::iterator it2;
 	timer.Start();
@@ -238,6 +238,43 @@ int main() {
 		cout << "Elapsed time Milliseconds: ";
 		timer.Time_Milliseconds();
 	}
+
+
+	//Sort Vector Container
+	cout << "Sorting Vector container" << endl;
+	timer.Start();
+	std::sort(booktxt_vec.begin(), booktxt_vec.end());
+	timer.Stop();
+	cout << "Sorting completed ";
+	cout << "Elasped time seconds: ";
+	timer.Time_Seconds();
+	cout << "Elapsed time Milliseconds: ";
+	timer.Time_Milliseconds();
+
+	cout << endl;
+
+	//sort list container
+	cout << "Sorting List container" << endl;
+	timer.Start();
+	std::sort(booktxt_list.begin(), booktxt_list.end());
+	timer.Stop();
+	cout << "Sorting completed ";
+	cout << "Elasped time seconds: ";
+	timer.Time_Seconds();
+	cout << "Elapsed time Milliseconds: ";
+	timer.Time_Milliseconds();
+
+	//sort deque container
+	cout << "Sorting deque container" << endl;
+	timer.Start();
+	std::sort(booktxt_deque.begin(), booktxt_deque.end());
+	timer.Stop();
+	cout << "Sorting completed ";
+	cout << "Elasped time seconds: ";
+	timer.Time_Seconds();
+	cout << "Elapsed time Milliseconds: ";
+	timer.Time_Milliseconds();
+
 
 
 
