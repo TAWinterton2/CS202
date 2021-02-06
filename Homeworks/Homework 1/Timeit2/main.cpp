@@ -239,6 +239,8 @@ int main() {
 		timer.Time_Milliseconds();
 	}
 
+	system("pause");
+	cout << endl;
 
 	//Sort Vector Container
 	cout << "Sorting Vector container" << endl;
@@ -256,13 +258,14 @@ int main() {
 	//sort list container
 	cout << "Sorting List container" << endl;
 	timer.Start();
-	std::sort(booktxt_list.begin(), booktxt_list.end());
+	booktxt_list.sort();
 	timer.Stop();
 	cout << "Sorting completed ";
 	cout << "Elasped time seconds: ";
 	timer.Time_Seconds();
 	cout << "Elapsed time Milliseconds: ";
 	timer.Time_Milliseconds();
+	cout << endl;
 
 	//sort deque container
 	cout << "Sorting deque container" << endl;
@@ -274,6 +277,7 @@ int main() {
 	timer.Time_Seconds();
 	cout << "Elapsed time Milliseconds: ";
 	timer.Time_Milliseconds();
+	
 
 
 
