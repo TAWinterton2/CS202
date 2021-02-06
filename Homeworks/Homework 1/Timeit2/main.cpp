@@ -79,19 +79,18 @@ int main() {
 	list <string> booktxt_list;
 	deque<string> booktxt_deque;
 
-
-	cout << "Reading in Book into vector" << endl;
-	
-
-	//list to read in text file
-	list <string> booktxt_list;
-
-	timer.Start();
-
 	//read in file and push string into vector
 	ifstream Book_vec(user_book);
 	ifstream Book_list(user_book);
+	ifstream Book_dq(user_book);
+	//list to read in text file
+	list <string> booktxt_list;
 
+
+	//Reading into Vector 
+	cout << "Reading in Book into vector" << endl;
+	
+	timer.Start();
 	if (!Book_vec) {
 		cout << "Error in opening file" << endl;
 	}
@@ -105,7 +104,7 @@ int main() {
 	timer.Stop();
 
 
-	cout << "Finished Reading in Text file into vector" << endl;;
+	cout << "Finished Reading in Text File" << endl;;
 	cout << "Elasped time seconds: ";
 	timer.Time_Seconds();
 	cout << "Elapsed time Milliseconds: ";
@@ -113,9 +112,9 @@ int main() {
 	//read in file with list
 	cout << endl;
 
+	//Reading into List 
 	cout << "Reading Book into list" << endl;
-	while (cin.get() != '\n');
-
+	
 	if (!Book_list) {
 		cout << "Error in opening file" << endl;
 	}
@@ -135,8 +134,31 @@ int main() {
 	timer.Time_Milliseconds();
 	cout << endl;
 
+	//Reading into deque
+	cout << "Reading Book into Deque" << endl;
+	timer.Start();
+	if (!Book_vec) {
+		cout << "Error in opening file" << endl;
+	}
+	else {
+
+		while (std::getline(Book_dq, text)) {
+			booktxt_deque.push_back(text);
+		}
+
+	}
+	timer.Stop();
+
+	cout << "Finished Reading in Text file" << endl;;
+	cout << "Elasped time seconds: ";
+	timer.Time_Seconds();
+	cout << "Elapsed time Milliseconds: ";
+	timer.Time_Milliseconds();
+	cout << endl;
 	system("pause");
 	cout << endl;
+
+
 
 
 	//find text from book (Vector) 
