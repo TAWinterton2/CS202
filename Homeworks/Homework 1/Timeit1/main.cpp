@@ -23,12 +23,7 @@ using std::random_device;
 int main() {
 	//Declare and generate PRNGS and timers for each search algorithm
 	
-
 	Stopwatch timer;
-	
-	
-	
-
 	bool result;
 	random_device rd;
 	mt19937 mt{ rd() }; //PRNG - unpredictable seed
@@ -39,22 +34,15 @@ int main() {
 	};
 	
 	//Generate A vector of random numbers 
+	cout << "Vector of 10 Elements" << endl;
+
 	vector<int> data(10);
 	std::generate(begin(data), end(data), gen);
 	for (auto i : data) {
 		cout << i << endl;
 	}
 
-	int numbertofind = 5;
-	
-
-	
-	//std::generate(data.begin(), data.end(), gen);
-
-	
-
-
-
+	int numbertofind = dist(mt);
 
 
 	//std::Binary_search
@@ -66,6 +54,8 @@ int main() {
 	timer.Start();
 	result = std::binary_search(data.begin(), data.end(), numbertofind);
 	timer.Stop();
+
+
 	cout << "Search Finished, Press enter to display times " << endl;
 	while (cin.get() != '\n');
 
@@ -86,6 +76,9 @@ int main() {
 		timer.Time_Milliseconds();
 		cout << endl;
 	}
+
+	
+	
 	//std::count 
 	while (cin.get() != '\n');
 	cout << endl;
@@ -117,6 +110,8 @@ int main() {
 		cout << endl;
 	}
 	while (cin.get() != '\n');
+
+
 
 	//Sorted vector
 	cout << "Sorted" << endl;
