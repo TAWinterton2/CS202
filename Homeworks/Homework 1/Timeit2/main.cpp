@@ -56,7 +56,7 @@ int main() {
 	timer.Stop();
 
 
-	cout << "Finished Reading in Text file" << endl;;
+	cout << "Finished Reading in Text file into vector" << endl;;
 	cout << "Elasped time seconds: ";
 	timer.Time_Seconds();
 	cout << endl;
@@ -67,7 +67,7 @@ int main() {
 
 	//read in file with list
 
-	cout << "Reading in Beowulf.txt" << endl;
+	cout << "Reading in Beowulf.txt into list" << endl;
 	cout << "Press enter to begin" << endl;
 	while (cin.get() != '\n');
 
@@ -119,4 +119,42 @@ int main() {
 
 	while (cin.get() != '\n');
 	//find text from book (list) 
+	cout << "Find a string of text in Book " << endl;
+	cout << "Press Enter to begin" << endl;
+	while (cin.get() != '\n');
+
+	//list iterator
+	list<string>::iterator it;
+	timer.Start();
+	
+	//Fetch iterator with the string in text2find
+	it = std::find(booktxt_list.begin(), booktxt_list.end(), text2find);
+
+	//check if it points to end or not
+	if (it != booktxt_list.end()) {
+		cout << "Text found! " << endl;
+		timer.Stop();
+
+		cout << "Elasped time seconds: ";
+		timer.Time_Seconds();
+		cout << endl;
+		cout << "Elapsed time Milliseconds: ";
+		timer.Time_Milliseconds();
+	}
+	else {
+		cout << "Text not found " << endl;
+		timer.Stop();
+
+		cout << "Elasped time seconds: ";
+		timer.Time_Seconds();
+		cout << endl;
+		cout << "Elapsed time Milliseconds: ";
+		timer.Time_Milliseconds();
+	}
+
+
+
+	system("pause");
+	return 0;
+
 }
