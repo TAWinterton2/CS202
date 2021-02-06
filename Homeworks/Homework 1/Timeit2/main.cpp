@@ -9,6 +9,7 @@
 #include<algorithm>
 #include<list>
 #include<iterator>
+#include<deque>
 #include"Stopwatch.h"
 
 
@@ -20,12 +21,16 @@ using std::vector;
 using std::fstream;
 using std::ifstream;
 using std::list;
+using std::deque;
 
 int main() {
 	
 	int menu_select;
 	string user_book;
 	string text2find;
+
+	//swtich statement to choose book to read in from
+	//and assing text for program to find
 	cout << "Time it 2 Test: " << '\n';
 	cout << "Please select a book " << endl;
 	cout << "1) Beowulf" << '\n';
@@ -42,36 +47,41 @@ int main() {
 		break;
 	case 2:
 		user_book = "GrimBros.txt";
+		text2find = "After the space of four years, at the time agreed upon, the four";
+			
 		break;
 	case 3:
 		user_book = "ScarletLetter.txt";
+		text2find = "There was another pause; and the physician began anew to examine and";
 		break;
 	case 4:
 		user_book = "Canterbury.txt";
+		text2find = "Thus endeth the Prologue.";
 		break;
 	case 5:
 		user_book = "Alice.txt";
+		text2find = "On this the White Rabbit blew three blasts on the trumpet, and then";
 		break;
 	default:
 		cout << "Invalid Choice " << endl;
 		return 0;
-
-
-
 	}
 
-	//string text and text to find in book 
+	//string text to grab from book and put into container
 	std::string text;
 	
 
 	//Stopwatch class called 
 	Stopwatch timer;
 
-	//vector to read in text file
-	vector<string> booktxt;
-	cout << "Reading in Beowulf.txt into vector" << endl;
-	cout << "Press enter to begin" << endl;
-	while (cin.get() != '\n');
+	//creating containers 
+	vector<string> booktxt_vec;
+	list <string> booktxt_list;
+	deque<string> booktxt_deque;
+
+
+	cout << "Reading in Book into vector" << endl;
+	
 
 	//list to read in text file
 	list <string> booktxt_list;
@@ -79,8 +89,8 @@ int main() {
 	timer.Start();
 
 	//read in file and push string into vector
-	ifstream Book_vec("Beowulf.txt");
-	ifstream Book_list("Beowulf.txt");
+	ifstream Book_vec(user_book);
+	ifstream Book_list(user_book);
 
 	if (!Book_vec) {
 		cout << "Error in opening file" << endl;
@@ -88,7 +98,7 @@ int main() {
 	else {
 
 		while (std::getline(Book_vec, text)) {
-			booktxt.push_back(text);
+			booktxt_vec.push_back(text);
 		}
 
 	}
@@ -98,16 +108,12 @@ int main() {
 	cout << "Finished Reading in Text file into vector" << endl;;
 	cout << "Elasped time seconds: ";
 	timer.Time_Seconds();
-	cout << endl;
 	cout << "Elapsed time Milliseconds: ";
 	timer.Time_Milliseconds();
-
-	while (cin.get() != '\n');
-
 	//read in file with list
+	cout << endl;
 
-	cout << "Reading in Beowulf.txt into list" << endl;
-	cout << "Press enter to begin" << endl;
+	cout << "Reading Book into list" << endl;
 	while (cin.get() != '\n');
 
 	if (!Book_list) {
@@ -125,22 +131,22 @@ int main() {
 	cout << "Finished Reading in Text file" << endl;;
 	cout << "Elasped time seconds: ";
 	timer.Time_Seconds();
-	cout << endl;
 	cout << "Elapsed time Milliseconds: ";
 	timer.Time_Milliseconds();
+	cout << endl;
+
+	system("pause");
+	cout << endl;
+
 
 	//find text from book (Vector) 
 	cout << "Find a string of text in Book " << endl;
-	cout << "Press Enter to begin" << endl;
-	while (cin.get() != '\n');
 	timer.Start();
-	if (std::find(booktxt.begin(), booktxt.end(), text2find) != booktxt.end()) {
+	if (std::find(booktxt_vec.begin(), booktxt_vec.end(), text2find) != booktxt_vec.end()) {
 		cout << "Text found!" << endl;
 		timer.Stop();
-		cout << endl;
 		cout << "Elasped time seconds: ";
 		timer.Time_Seconds();
-		cout << endl;
 		cout << "Elapsed time Milliseconds: ";
 		timer.Time_Milliseconds();
 
@@ -150,17 +156,16 @@ int main() {
 		timer.Stop();
 		cout << "Elasped time seconds: ";
 		timer.Time_Seconds();
-		cout << endl;
 		cout << "Elapsed time Milliseconds: ";
 		timer.Time_Milliseconds();
 
 	}
+	
+	cout << endl;
 
-	while (cin.get() != '\n');
 	//find text from book (list) 
 	cout << "Find a string of text in Book " << endl;
-	cout << "Press Enter to begin" << endl;
-	while (cin.get() != '\n');
+	
 
 	//list iterator
 	list<string>::iterator it;
@@ -173,20 +178,16 @@ int main() {
 	if (it != booktxt_list.end()) {
 		cout << "Text found! " << endl;
 		timer.Stop();
-
 		cout << "Elasped time seconds: ";
 		timer.Time_Seconds();
-		cout << endl;
 		cout << "Elapsed time Milliseconds: ";
 		timer.Time_Milliseconds();
 	}
 	else {
 		cout << "Text not found " << endl;
 		timer.Stop();
-
 		cout << "Elasped time seconds: ";
 		timer.Time_Seconds();
-		cout << endl;
 		cout << "Elapsed time Milliseconds: ";
 		timer.Time_Milliseconds();
 	}
