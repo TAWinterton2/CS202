@@ -31,7 +31,7 @@ int main() {
 
 	//vector to read in text file
 	vector<string> booktxt;
-	cout << "Reading in Beowulf.txt" << endl;
+	cout << "Reading in Beowulf.txt into vector" << endl;
 	cout << "Press enter to begin" << endl;
 	while (cin.get() != '\n');
 
@@ -41,14 +41,15 @@ int main() {
 	timer.Start();
 
 	//read in file and push string into vector
-	ifstream Book("Beowulf.txt");
+	ifstream Book_vec("Beowulf.txt");
+	ifstream Book_list("Beowulf.txt");
 
-	if (!Book) {
+	if (!Book_vec) {
 		cout << "Error in opening file" << endl;
 	}
 	else {
 
-		while (std::getline(Book, text)) {
+		while (std::getline(Book_vec, text)) {
 			booktxt.push_back(text);
 		}
 
@@ -71,13 +72,13 @@ int main() {
 	cout << "Press enter to begin" << endl;
 	while (cin.get() != '\n');
 
-	if (!Book) {
+	if (!Book_list) {
 		cout << "Error in opening file" << endl;
 	}
 	else {
 		timer.Start();
-		while (std::getline(Book, text)) {
-			booktxt_list.push_front(text);
+		while (std::getline(Book_list, text)) {
+			booktxt_list.push_back(text);
 		}
 
 	}
