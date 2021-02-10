@@ -6,5 +6,10 @@ using std::endl;
 
 int main() {
 
+	struct Value {
 
+	};
+
+
+	return 0;
 }
