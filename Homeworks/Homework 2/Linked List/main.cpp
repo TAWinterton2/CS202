@@ -2,6 +2,7 @@
 #include<list>
 #include"Value.cpp"
 
+using std::list;
 using std::cout;
 using std::cin;
 using std::endl;
@@ -9,6 +10,9 @@ using std::endl;
 int main() {
 
 	//struct value with 3 nodes 
+	list<Value> vlist1, vlist2;
+
+
 	Value* head = NULL;
 	Value* second = NULL;
 	Value* third = NULL;

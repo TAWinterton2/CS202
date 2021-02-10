@@ -1,6 +1,8 @@
 #include<iostream>
 #include<list>
 #include<string>
+
+using std::list;
 using std::string;
 using std::cout;
 using std::cin;
@@ -15,9 +17,11 @@ struct Value {
 
 
 //prints contents of linked list, starting w/ given node
-void printlist(Value* n) {
-	while (n != NULL) {
-		cout << n->booktitle << ' ';
-		n = n->next;
+void printlist(list <Value> V) {
+
+	list <Value> :: iterator it;
+	for (it = V.begin(); it != V.end(); ++it) {
+		cout << '\t' << *it << endl;
 	}
+
 }
