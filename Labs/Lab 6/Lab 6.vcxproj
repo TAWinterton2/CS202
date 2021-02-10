@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6ad5158c-9371-426b-b09b-d972c9be5be4}</ProjectGuid>
-    <RootNamespace>Timeit2</RootNamespace>
+    <ProjectGuid>{dd9d4ffd-e4fc-4395-898b-307ad75cf24d}</ProjectGuid>
+    <RootNamespace>Lab6</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,11 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Timeit1\Stopwatch.cpp" />
-    <ClCompile Include="timit2main.cpp" />
+    <ClInclude Include="..\..\..\..\..\..\Favorites\Downloads\catch.hpp" />
+    <ClInclude Include="Vector3f.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Timeit1\Stopwatch.h" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Vector3f.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -80,8 +80,8 @@ int main() {
 
 
 
-	vector<int> data(10);
-	vector<int> data2(10);
+	vector<int> data(vecsize);
+	vector<int> data2(vecsize);
 	std::generate(begin(data), end(data), gen);
 	std::generate(begin(data2), end(data2), gen);
 
@@ -102,7 +102,7 @@ int main() {
 	while (cin.get() != '\n');
 
 	if (result == true) {
-		cout << "Element " << numbertofind << "Exist in Vector." << endl;
+		cout << "Element " << numbertofind << " Exist in Vector." << endl;
 		cout << "Time taken: ";
 		timer.Time_Seconds();
 		cout << endl;
@@ -166,7 +166,7 @@ int main() {
 	while (cin.get() != '\n');
 
 	if (result == true) {
-		cout << "Element " << numbertofind << "Exist in Vector." << endl;
+		cout << "Element " << numbertofind << " Exist in Vector." << endl;
 		cout << "Time taken: ";
 		timer.Time_Seconds();
 		cout << endl;
