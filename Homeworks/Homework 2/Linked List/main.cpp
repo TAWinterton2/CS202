@@ -8,11 +8,27 @@ using std::endl;
 
 int main() {
 
-	//3 nodes
+	//struct value with 3 nodes 
 	Value* head = NULL;
 	Value* second = NULL;
-	Value* thrid = NULL;
+	Value* third = NULL;
 
+	//3 nodes allocated into heap
+
+	head = new Value();
+	second = new Value();
+	third = new Value();
+
+	head->booktitle = "The Hobbit"; // assing data in first node
+	head->next = second; // link first Value w/ second
+
+	second->booktitle = "The Fellowship of the Ring";
+	head->next = third;
+
+	third->booktitle = "The Two Towers";
+	third->next = NULL;
+
+	printlist(head);
 
 
 	return 0;
