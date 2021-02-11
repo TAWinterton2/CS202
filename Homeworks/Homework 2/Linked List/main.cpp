@@ -1,19 +1,26 @@
 #include<iostream>
 #include<list>
 #include"Value.cpp"
-
+#include"catch.hpp"
 using std::list;
 using std::cout;
 using std::cin;
 using std::endl;
 
-int main() {
-
-	//list<valie> declared
-	list<Value> vlist1, vlist2;
+TEST_CASE("Queue: First in First out") {
 
 
+}
+
+TEST_CASE("Stack: Last in First out") {
+
+}
+
+TEST_CASE("INSERT AND FIND") {
 
 
-	return 0;
+}
+
+TEST_CASE("Print out list") {
+
 }
