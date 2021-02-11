@@ -41,7 +41,7 @@ void printlist(list <Value>& V) {
 
 
 
-//Test Queue for List (First in First out)
+//Testcase for Queueing with list (First in First out)
 TEST_CASE("Queue: First in First out") {
 	list<Value> testlist;
 
@@ -50,9 +50,10 @@ TEST_CASE("Queue: First in First out") {
 	book1.author = "J.R Tolkien";
 	book1.publicationdate = "1937";
 
+
 	testlist.push_back(book1);
 
-	book2.booktitle = "The Felloship of the Ring";
+	book2.booktitle = "The Fellowship of the Ring";
 	book2.author = "J.R Tolkien";
 	book2.publicationdate = "1943";
 
@@ -76,11 +77,36 @@ TEST_CASE("Queue: First in First out") {
 
 
 }
-/*
+//Testcase for Stacking with list (Last in - first out)
 TEST_CASE("Stack: Last in First out") {
+	list<Value> testlist;
 
+	Value book1, book2;
+	book1.booktitle = "The Way of Kings";
+	book1.author = "Brandon Sanderson";
+	book1.publicationdate = "2010";
+
+	testlist.push_front(book1);
+
+	book2.booktitle = "Worlds of Radiance";
+	book2.author = "Brandon Sanderson";
+	book2.publicationdate = "2014";
+
+	testlist.push_front(book2);
+
+	//Test to see that first element of testlist is The hobbit
+	REQUIRE(testlist.front().booktitle == book2.booktitle);
+	REQUIRE(testlist.front().author == book2.author);
+	REQUIRE(testlist.front().publicationdate == book2.publicationdate);
+
+	//remove first element of testlist
+	testlist.pop_front();
+
+	REQUIRE(testlist.front().booktitle == book1.booktitle);
+	REQUIRE(testlist.front().author == book1.author);
+	REQUIRE(testlist.front().publicationdate == book1.publicationdate);
 }
-
+/*
 TEST_CASE("INSERT AND FIND") {
 
 
