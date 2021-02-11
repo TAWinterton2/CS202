@@ -58,8 +58,17 @@ TEST_CASE("Queue: First in First out") {
 
 	testlist.push_back(book2);
 	
+	//Test to see that first element of testlist is The hobbit
 	REQUIRE(testlist.front().booktitle == book1.booktitle);
+	REQUIRE(testlist.front().author == book1.author);
+	REQUIRE(testlist.front().publicationdate == book1.publicationdate);
+	
+	//remove first element of testlist
+	testlist.pop_front();
 
+	REQUIRE(testlist.front().booktitle == book2.booktitle);
+	REQUIRE(testlist.front().author == book2.author);
+	REQUIRE(testlist.front().publicationdate == book2.publicationdate);
 
 
 
