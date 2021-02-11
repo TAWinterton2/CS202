@@ -14,7 +14,6 @@ using std::cin;
 using std::endl;
 
 
-
 struct Value {
 	string booktitle;
 	string author;
@@ -36,6 +35,9 @@ void printlist(list <Value>& V) {
 	}
 
 }
+
+
+
 
 
 
