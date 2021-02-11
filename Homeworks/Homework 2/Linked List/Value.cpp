@@ -12,7 +12,6 @@ using std::endl;
 struct Value {
 	string booktitle;
 	int publicationdate;
-	struct Value* next;
 };
 
 
@@ -21,7 +20,9 @@ void printlist(list <Value> V) {
 
 	list <Value> :: iterator it;
 	for (it = V.begin(); it != V.end(); ++it) {
-		cout << '\t' << *it << endl;
+		cout << '\t' << it->booktitle << endl;
+		cout << "\t Publication date: " << it->publicationdate << endl;
+		cout << endl;
 	}
 
 }
