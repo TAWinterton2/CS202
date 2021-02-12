@@ -44,7 +44,6 @@ struct sort_by_Title {
 };
 
 
-
 //Testcase for Queueing with list (First in First out)
 TEST_CASE("Queue: First in First out") {
 	list<Book_Meta_Data> testlist;
