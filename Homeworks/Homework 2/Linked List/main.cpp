@@ -109,6 +109,7 @@ TEST_CASE("Stack: Last in First out") {
 TEST_CASE("INSERT AND FIND") {
 	//declare list
 	list<Book_Meta_Data> testlist;
+	list<Book_Meta_Data>::iterator it;
 
 	//declare book1 and book2 to be pushed into list
 	Book_Meta_Data book1{ "The Way of Kings","Brandon Sanderson","2010" }, book2{ "Worlds of Radiance", "Brandon Sanderson", "2014" };
@@ -119,6 +120,12 @@ TEST_CASE("INSERT AND FIND") {
 	//sort teslist by book title
 	std::sort(testlist.begin(), testlist.end(), sort_by_Title());
 	
+
+	//search for Worlds of Radiance
+	
+	list<Book_Meta_Data>::iterator findit = std::find(testlist.begin(), testlist.end(), "Worlds of Radiance");
+	
+	REQUIRE(findit != testlist.end());
 
 
 
