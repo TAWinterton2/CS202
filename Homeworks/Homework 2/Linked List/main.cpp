@@ -14,7 +14,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-
+//global struct for Program
 struct Book_Meta_Data {
 	string booktitle;
 	string author;
@@ -35,14 +35,12 @@ void printlist(list <Book_Meta_Data>& V) {
 }
 
 
-
 //lambda function for sorting
 struct sort_by_Title {
 	bool operator()(Book_Meta_Data const& b1, Book_Meta_Data const& b2) const {
 		return b1.booktitle < b2.booktitle;
 	}
 };
-
 
 
 
@@ -79,6 +77,7 @@ TEST_CASE("Queue: First in First out") {
 
 
 }
+
 //Testcase for Stacking with list (Last in - first out)
 TEST_CASE("Stack: Last in First out") {
 	list<Book_Meta_Data> testlist;
@@ -105,7 +104,7 @@ TEST_CASE("Stack: Last in First out") {
 	REQUIRE(testlist.front().publicationdate == book1.publicationdate);
 }
 
-
+//Testcase for Finding element in list and inserting new element
 TEST_CASE("INSERT AND FIND") {
 	//declare list
 	list<Book_Meta_Data> testlist;
@@ -118,7 +117,7 @@ TEST_CASE("INSERT AND FIND") {
 	testlist.push_front(book2);
 
 	//sort teslist by book title
-	std::sort(testlist.begin(), testlist.end(), sort_by_Title());
+	std::sort(testlist.begin(), testlist.end());
 	
 
 	//search for Worlds of Radiance
@@ -127,14 +126,21 @@ TEST_CASE("INSERT AND FIND") {
 	
 	REQUIRE(findit != testlist.end());
 
+	//create book3 to be inserted into pos of findit
 
+	Book_Meta_Data book3{ "Oathbringer", "Brandon Sanderson", "2017" };
 
+	testlist.insert(findit, book3);
 
-	
+	//test to see last element of testlist is book3
+	REQUIRE(testlist.back().booktitle == "Oathbringer");
+	REQUIRE(testlist.back().author == "Brandon Sanderson");
+	REQUIRE(testlist.back().publicationdate == "2017");
+
 
 }
 
-
+//Test case for printing out all elements in list
 /*
 TEST_CASE("Print out list") {
 	
