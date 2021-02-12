@@ -48,7 +48,8 @@ struct sort_by_Title {
 TEST_CASE("Queue: First in First out") {
 	list<Book_Meta_Data> testlist;
 
-	Book_Meta_Data book1{ "The Hobbit", "J.R Tolkien", "1937" }, book2{ "The Fellowship of the Ring" " J.R Tolkien", "1943" };
+	Book_Meta_Data book1{ "The Hobbit", "J.R Tolkien", "1937" }, 
+		book2{ "The Fellowship of the Ring" " J.R Tolkien", "1943" };
 	
 
 	//book1 is first element of list
@@ -82,7 +83,8 @@ TEST_CASE("Queue: First in First out") {
 TEST_CASE("Stack: Last in First out") {
 	list<Book_Meta_Data> testlist;
 
-	Book_Meta_Data book1{ "The Way of Kings","Brandon Sanderson","2010" }, book2{ "Worlds of Radiance", "Brandon Sanderson", "2014" };
+	Book_Meta_Data book1{ "The Way of Kings","Brandon Sanderson","2010" },
+		book2{ "Worlds of Radiance", "Brandon Sanderson", "2014" };
 	
 	//make book1 last element of list 
 	testlist.push_front(book1);
@@ -111,7 +113,8 @@ TEST_CASE("INSERT AND FIND") {
 	list<Book_Meta_Data>::iterator it;
 
 	//declare book1 and book2 to be pushed into list
-	Book_Meta_Data book1{ "The Way of Kings","Brandon Sanderson","2010" }, book2{ "Worlds of Radiance", "Brandon Sanderson", "2014" };
+	Book_Meta_Data book1{ "The Way of Kings","Brandon Sanderson","2010" }, 
+		book2{ "Worlds of Radiance", "Brandon Sanderson", "2014" };
 	
 	testlist.push_front(book1);
 	testlist.push_front(book2);
@@ -141,7 +144,19 @@ TEST_CASE("INSERT AND FIND") {
 }
 
 //Test case for printing out all elements in list
-/*
+
 TEST_CASE("Print out list") {
+	//declare list
+	list<Book_Meta_Data> testlist;
 	
-}*/
+	Book_Meta_Data book1{ "Throne of Glass", "Sarah J. Maas", "2014" }, 
+		book2{"Assassin's Apprentince", "Robin Hobb", "1996"}, 
+		book3{"Arrows of the Queen", "Mercedes Lackey", "1987"};
+
+	REQUIRE(printlist(teslist));
+
+	
+
+
+
+}
