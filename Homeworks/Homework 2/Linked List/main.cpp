@@ -4,6 +4,7 @@
 #include<list>
 #include<iterator>
 #include<string>
+#include<algorithm>
 #include"catch.hpp"
 
 using std::string;
@@ -14,19 +15,16 @@ using std::cin;
 using std::endl;
 
 
-struct Value {
+struct Book_Meta_Data {
 	string booktitle;
 	string author;
 	string publicationdate;
 };
 
-
-
-
 //prints contents of linked list, starting w/ given node
-void printlist(list <Value>& V) {
+void printlist(list <Book_Meta_Data>& V) {
 
-	list <Value>::iterator it;
+	list <Book_Meta_Data>::iterator it;
 	for (it = V.begin(); it != V.end(); ++it) {
 		cout << '\t' << it->booktitle << endl;
 		cout << '\t' << it->author << endl;
@@ -38,14 +36,21 @@ void printlist(list <Value>& V) {
 
 
 
+//lambda function for sorting
+struct sort_by_Title {
+	bool operator()(Book_Meta_Data const& b1, Book_Meta_Data const& b2) const {
+		return b1.booktitle < b2.booktitle;
+	}
+};
+
 
 
 
 //Testcase for Queueing with list (First in First out)
 TEST_CASE("Queue: First in First out") {
-	list<Value> testlist;
+	list<Book_Meta_Data> testlist;
 
-	Value book1{ "The Hobbit", "J.R Tolkien", "1937" }, book2{ "The Fellowship of the Ring" " J.R Tolkien", "1943" };
+	Book_Meta_Data book1{ "The Hobbit", "J.R Tolkien", "1937" }, book2{ "The Fellowship of the Ring" " J.R Tolkien", "1943" };
 	
 
 	//book1 is first element of list
@@ -76,19 +81,12 @@ TEST_CASE("Queue: First in First out") {
 }
 //Testcase for Stacking with list (Last in - first out)
 TEST_CASE("Stack: Last in First out") {
-	list<Value> testlist;
+	list<Book_Meta_Data> testlist;
 
-	Value book1, book2;
-	book1.booktitle = "The Way of Kings";
-	book1.author = "Brandon Sanderson";
-	book1.publicationdate = "2010";
-
+	Book_Meta_Data book1{ "The Way of Kings","Brandon Sanderson","2010" }, book2{ "Worlds of Radiance", "Brandon Sanderson", "2014" };
+	
 	//make book1 last element of list 
 	testlist.push_front(book1);
-
-	book2.booktitle = "Worlds of Radiance";
-	book2.author = "Brandon Sanderson";
-	book2.publicationdate = "2014";
 
 	//book 2 is now first element of list
 	testlist.push_front(book2);
@@ -107,12 +105,30 @@ TEST_CASE("Stack: Last in First out") {
 	REQUIRE(testlist.front().publicationdate == book1.publicationdate);
 }
 
-/*
-TEST_CASE("INSERT AND FIND") {
 
+TEST_CASE("INSERT AND FIND") {
+	//declare list
+	list<Book_Meta_Data> testlist;
+
+	//declare book1 and book2 to be pushed into list
+	Book_Meta_Data book1{ "The Way of Kings","Brandon Sanderson","2010" }, book2{ "Worlds of Radiance", "Brandon Sanderson", "2014" };
+	
+	testlist.push_front(book1);
+	testlist.push_front(book2);
+
+	//sort teslist by book title
+	std::sort(testlist.begin(), testlist.end(), sort_by_Title());
+	
+
+
+
+
+	
 
 }
 
+
+/*
 TEST_CASE("Print out list") {
 	
 }*/
