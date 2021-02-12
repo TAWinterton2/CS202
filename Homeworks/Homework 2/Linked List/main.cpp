@@ -107,7 +107,7 @@ TEST_CASE("Stack: Last in First out") {
 }
 
 //Testcase for Finding element in list and inserting new element
-/*
+
 TEST_CASE("INSERT AND FIND") {
 	//declare list
 	list<Book_Meta_Data> testlist;
@@ -143,7 +143,7 @@ TEST_CASE("INSERT AND FIND") {
 
 
 }
-*/
+
 //Test case for printing out all elements in list
 
 TEST_CASE("Print out list") {
