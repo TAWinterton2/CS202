@@ -22,7 +22,7 @@ struct Book_Meta_Data {
 };
 
 //prints contents of linked list, starting w/ given node
-void printlist(list <Book_Meta_Data>& V) {
+bool printlist(list <Book_Meta_Data>& V) {
 
 	list <Book_Meta_Data>::iterator it;
 	for (it = V.begin(); it != V.end(); ++it) {
@@ -31,7 +31,8 @@ void printlist(list <Book_Meta_Data>& V) {
 		cout << "\t Publication date: " << it->publicationdate << endl;
 		cout << endl;
 	}
-
+	if (it == V.end());
+	return true;
 }
 
 
@@ -107,6 +108,7 @@ TEST_CASE("Stack: Last in First out") {
 }
 
 //Testcase for Finding element in list and inserting new element
+/*
 TEST_CASE("INSERT AND FIND") {
 	//declare list
 	list<Book_Meta_Data> testlist;
@@ -142,7 +144,7 @@ TEST_CASE("INSERT AND FIND") {
 
 
 }
-
+*/
 //Test case for printing out all elements in list
 
 TEST_CASE("Print out list") {
@@ -153,7 +155,7 @@ TEST_CASE("Print out list") {
 		book2{"Assassin's Apprentince", "Robin Hobb", "1996"}, 
 		book3{"Arrows of the Queen", "Mercedes Lackey", "1987"};
 
-	REQUIRE(printlist(teslist));
+	REQUIRE(printlist(testlist) == true);
 
 	
 
