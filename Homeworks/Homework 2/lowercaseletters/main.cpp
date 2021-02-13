@@ -17,6 +17,7 @@ void to_lower(char* string) {
 	{
 
 	}
+
 	//convert Letter to uppercase 
 	for (counter1 = 0; counter1 <= counter2; ++counter1) {
 		if (string[counter1] >= 65 && string[counter1] <= 92) {
