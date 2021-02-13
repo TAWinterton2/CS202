@@ -48,7 +48,10 @@ int main() { //main goes into stack
 
 	cout << "Adding in free store" << endl;
 
-
+	
+	
+	3["Algorithm"];
+	cout << 4["Algorithm"];
 	return 0;
 
 }
