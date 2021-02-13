@@ -11,42 +11,30 @@ using std::cin;
 using std::endl;
 using std::unique_ptr;
 
-//Static/Global Variable 
-int global = 10;
+//Global Variable - goes into Static
+int global1, global2, global3;
 
 
 
 //prints pointer of variable 
-void printPointer(int var) {
-	int* ptr = &var;
-	cout << "Variable = " << *ptr << "\n";
-	cout << "&i = " << ptr << "\n";
-
-
+void printPointer(int i ){
+	int* iptr = &i;
+	cout << "Value " << *iptr << endl;
+	cout << "Adress: " << iptr << endl;
 }
 
 int main() { //main goes into stack
 
-	int a = 4; //local variable - goes into stack
-
-	unique_ptr<int> p; (new int (5));
-
+	int local1, local2, local3 ; //local variable - goes into stack
 	
 
-	//printPointer(global);
-	//printPointer(*p);
-	//printPointer(a);
-	cout << "Global/Static" << endl;
-	cout << "Variable = " << global << endl;
-	cout << "Address = " << &global << endl;
+	cout << "Address of global1: " << (long)&global1 << endl;
+	cout << "Address of global2: " << (long)&global2 << endl;
+	cout << "Address of global3: " << (long)&global3 << endl;
+	cout << "Address of Local1:  " << (long)&local1 << endl;
+	cout << "Address of Local2:  " << (long)&local2 << endl;
+	cout << "Address of Local3:  " << (long)&local3 << endl;
 
-	cout << "Local Variable / Stack " << endl;
-	cout << "Variable = " << a << endl;
-	cout << "Address = " << &a << endl;
-
-	cout << "Dynamic Memory / Reserved " << endl;
-	cout << "Variable = " 
-	
 
 
 	return 0;
