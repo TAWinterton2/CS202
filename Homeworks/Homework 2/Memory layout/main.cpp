@@ -12,46 +12,58 @@ using std::endl;
 using std::unique_ptr;
 
 //Global Variable - goes into Static
-int global1, global2, global3;
+int static_dat;
 
 
 
 int main() { //main goes into stack
 
-	int local1, local2, local3 ; //local variable - goes into stack
+	int stack_dat ; //local variable - goes into stack
+	int* ptr = new int ; //heap - free store
+	int Array[100];
+	*ptr = 5;
 
-	std::vector<long> memorylocations;
-
-	cout << "Address of global1: " << (long)&global1 << endl;
-	memorylocations.push_back((long)&global1);
-	cout << "Address of global2: " << (long)&global2 << endl;
-	memorylocations.push_back((long)&global2);
-	cout << "Address of global3: " << (long)&global3 << endl;
-	memorylocations.push_back((long)&global3);
-	cout << "Address of Local1:  " << (long)&local1 << endl;
-	memorylocations.push_back((long)&local1);
-	cout << "Address of Local2:  " << (long)&local2 << endl;
-	memorylocations.push_back((long)&local2);
-	cout << "Address of Local3:  " << (long)&local3 << endl;
-	memorylocations.push_back((long)&local3);
-
-	std::sort(memorylocations.begin(), memorylocations.end());
 	
-	cout << "Memory order: " << endl;
+	cout << "Address of global1: " << &static_dat << endl;
 
-	for (int i = 0; i < memorylocations.size();  i++) {
-		cout << memorylocations[i] << endl;
+	cout << "Address of Local1:  " << &stack_dat << endl;
 
+	cout << "Addresss for ptr " << ptr << endl;
+
+	//check to see if static or stack sit lower
+	if (&static_dat < &stack_dat) {
+		cout << "static  sits lower withen memory than stack" << endl;
+	}
+	else {
+		cout << " stack  sits lower withen memory than static " << endl;
 	}
 
-	cout << "Stack Grows towards higher addresses" << endl;
+	cout << ptr << endl;
 
-	cout << "Adding in free store" << endl;
+	//check to see if static or heap sit lower
+	if (&static_dat < ptr) {
+		cout << "Static sits lower in memory than Free Store(Heap)" << endl;
+	}
+	else {
+		cout << "Free store (Heap) sits lower in memory than Satic" << endl;
+	}
+
+	//check to see if stack or heap sits lower
+	if (&stack_dat < ptr) {
+		cout << "Stack Sits lower than Free store(heap) " << endl;
+	}
+	else {
+		cout << "Free store(heap) sits lower than Stack" << endl;
+	}
 
 	
+	cout << "Stack Grows Downwards" << endl;
+
+	delete ptr;
+
 	
-	3["Algorithm"];
-	cout << 4["Algorithm"];
+
+
 	return 0;
 
 }
