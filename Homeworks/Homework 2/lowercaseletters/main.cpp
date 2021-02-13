@@ -4,12 +4,12 @@
 #include<cstdio>
 #include<stdio.h>
 
-
+//ascii values for upper case letters range from 65 - 90
 
 //function to convert string to lower case
 void to_lower(char* string) {
 	//counters to count thorugh each char
-	//ascii  values for upper case letters range from 65 - 90
+	
 	int counter1, counter2;
 	
 	//check to see if letter is already lowercase
@@ -33,7 +33,7 @@ int main() {
 
 	//get in string from user
 	std::cout << "Enter String w/ uppercase letters: ";
-	std::fgets(teststring, 20, stdin);
+	std::cin >> teststring;
 
 	//convert all upercase letters to lowercase
 	to_lower(teststring);

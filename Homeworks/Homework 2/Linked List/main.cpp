@@ -149,7 +149,7 @@ TEST_CASE("INSERT AND FIND") {
 	
 	//search for Worlds of Radiance
 	
-	list<Book_Meta_Data>::iterator findit = std::find(testlist.begin(), testlist.end(), Book_Meta_Data("Worlds of Radiance", "Brandon Sanderson", 2014,));
+	list<Book_Meta_Data>::iterator findit = std::find(testlist.begin(), testlist.end(), Book_Meta_Data("Worlds of Radiance", "Brandon Sanderson", 2014));
 	
 	REQUIRE(findit != testlist.end());
 
