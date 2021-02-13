@@ -19,14 +19,26 @@ struct Book_Meta_Data {
 	string booktitle;
 	string author;
 	int publicationdate;
+	
 
 	Book_Meta_Data(string booktitle, string author, int publicationdate) : booktitle(booktitle)
 		, author(author), publicationdate(publicationdate) {}
 
+	//bool operator, will use for sorting
 	bool operator < (const Book_Meta_Data& book) const {
 		return booktitle < book.booktitle;
 	}
 };
+
+//struct to use for comparing 2 books
+struct Book_Compare {
+	bool operator() (const Book_Meta_Data& book1, const Book_Meta_Data& book2) {
+		if (book1.booktitle == book2.booktitle) 
+			return book1 < book2;
+		return book1.booktitle < book2.booktitle;
+	}
+};
+
 
 //prints contents of linked list, starting w/ given node
 bool printlist(list <Book_Meta_Data>& V) {
@@ -123,9 +135,9 @@ TEST_CASE("INSERT AND FIND") {
 	testlist.push_front(book2);
 
 	//sort teslist by book date, included lambda function to make .sort sort by publish year
-	testlist.sort();
+	testlist.sort(Book_Compare());
 	
-	/*
+	
 	//search for Worlds of Radiance
 	
 	list<Book_Meta_Data>::iterator findit = std::find(testlist.begin(), testlist.end(), "Worlds of Radiance");
@@ -142,7 +154,7 @@ TEST_CASE("INSERT AND FIND") {
 	REQUIRE(testlist.back().booktitle == "Oathbringer");
 	REQUIRE(testlist.back().author == "Brandon Sanderson");
 	REQUIRE(testlist.back().publicationdate == 2017);
-*/
+
 
 }
 
