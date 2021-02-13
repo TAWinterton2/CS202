@@ -12,16 +12,16 @@ using std::endl;
 using std::unique_ptr;
 
 //Global Variable - goes into Static
-int static_dat;
+int static_dat = 10 ;
 
 
 
 int main() { //main goes into stack
 
-	int stack_dat ; //local variable - goes into stack
+	int stack_dat  = 10; //local variable - goes into stack
 	int* ptr = new int ; //heap - free store
-	int Array[100];
-	*ptr = 5;
+	//int* heap_array = new int[5];
+	*ptr = 10;
 
 	
 	cout << "Address of global1: " << &static_dat << endl;
@@ -30,6 +30,8 @@ int main() { //main goes into stack
 
 	cout << "Addresss for ptr " << ptr << endl;
 
+	cout << endl;
+
 	//check to see if static or stack sit lower
 	if (&static_dat < &stack_dat) {
 		cout << "static  sits lower withen memory than stack" << endl;
@@ -37,8 +39,6 @@ int main() { //main goes into stack
 	else {
 		cout << " stack  sits lower withen memory than static " << endl;
 	}
-
-	cout << ptr << endl;
 
 	//check to see if static or heap sit lower
 	if (&static_dat < ptr) {
