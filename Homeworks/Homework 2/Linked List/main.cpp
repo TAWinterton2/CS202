@@ -19,6 +19,13 @@ struct Book_Meta_Data {
 	string booktitle;
 	string author;
 	int publicationdate;
+
+	Book_Meta_Data(string booktitle, string author, int publicationdate) : booktitle(booktitle)
+		, author(author), publicationdate(publicationdate) {}
+
+	bool operator < (const Book_Meta_Data& book) const {
+		return booktitle < book.booktitle;
+	}
 };
 
 //prints contents of linked list, starting w/ given node
@@ -36,14 +43,7 @@ bool printlist(list <Book_Meta_Data>& V) {
 }
 
 
-//lambda function for sorting
-//struct sort_by_Title {
-/*
-	bool operator()(Book_Meta_Data const& b1, Book_Meta_Data const& b2) const {
-		return b1.booktitle < b2.booktitle;
-	}
-};
-*/
+
 
 //Testcase for Queueing with list (First in First out)
 TEST_CASE("Queue: First in First out") {
@@ -122,11 +122,10 @@ TEST_CASE("INSERT AND FIND") {
 	testlist.push_front(book1);
 	testlist.push_front(book2);
 
-	//sort teslist by book date
-	testlist.sort([](Book_Meta_Data const& a, Book_Meta_Data const& b) {
-		return a.booktitle < b.booktitle; });
+	//sort teslist by book date, included lambda function to make .sort sort by publish year
+	testlist.sort();
 	
-
+	/*
 	//search for Worlds of Radiance
 	
 	list<Book_Meta_Data>::iterator findit = std::find(testlist.begin(), testlist.end(), "Worlds of Radiance");
@@ -143,7 +142,7 @@ TEST_CASE("INSERT AND FIND") {
 	REQUIRE(testlist.back().booktitle == "Oathbringer");
 	REQUIRE(testlist.back().author == "Brandon Sanderson");
 	REQUIRE(testlist.back().publicationdate == 2017);
-
+*/
 
 }
 
@@ -153,9 +152,9 @@ TEST_CASE("Print out list") {
 	//declare list
 	list<Book_Meta_Data> testlist;
 	
-	Book_Meta_Data book1{ "Throne of Glass", "Sarah J. Maas", "2014" }, 
-		book2{"Assassin's Apprentince", "Robin Hobb", "1996"}, 
-		book3{"Arrows of the Queen", "Mercedes Lackey", "1987"};
+	Book_Meta_Data book1{ "Throne of Glass", "Sarah J. Maas", 2014 }, 
+		book2{"Assassin's Apprentince", "Robin Hobb", 1996}, 
+		book3{"Arrows of the Queen", "Mercedes Lackey", 1987};
 
 	REQUIRE(printlist(testlist) == true);
 
