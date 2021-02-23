@@ -30,7 +30,7 @@ Complex::Complex(const Complex& old) : _real(old._real), _imaginary(old._imagina
 
 
  Complex operator+ (const Complex& rhs, const Complex& lhs) {
-	 // (a + bi) + (c + di) = (a + c + bi + di) 
+	 // (a + bi) + (c + di) = (a + c) + (bi + di) 
 
 	 auto temp{ lhs };
 	 temp += rhs;
