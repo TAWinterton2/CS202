@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="tokenizer.cpp" />
     <ClCompile Include="token_main.cpp" />
   </ItemGroup>
   <ItemGroup>
