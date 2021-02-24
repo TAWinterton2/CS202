@@ -10,6 +10,7 @@ using std::cin;
 using std::endl;
 using std::string;
 using std::vector;
+using std::istringstream;
 
 
 //return true if it read the string and false if the string was a blank line 
@@ -25,9 +26,22 @@ bool Readline(string str) {
 }
 
 
-//uses std::istringstream to read strings separated by whitespace characters
-// push a blank string at the end of each line. Return # of tokens read from string
-unsigned AnalyzeTokens(vector<string> tokens) {
+//uses std::istringstream to read strings seperated by whitespace charcters
+//push a blank string to the end of each line, return # of tokens read from string
+unsigned StringToTokens(const string& input, vector<string>& tokens) {
+	istringstream token_check(input);
+	string user_input;
+
+	while (getline(token_check, user_input)) {
+		tokens.push_back(user_input);
+	}
+	int a = tokens.size();
+	return a;
+}
+
+
+//Analyze Tokens and Rpints out token and type
+void AnalyzeTokens(vector<string> tokens) {
 	for (auto a : tokens) {
 		cout << ' < ' << a << ' > ' << endl;
 
@@ -99,6 +113,8 @@ unsigned AnalyzeTokens(vector<string> tokens) {
 
 	}
 }
+
+
 
 
 
