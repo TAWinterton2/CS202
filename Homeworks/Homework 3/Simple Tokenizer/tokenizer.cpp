@@ -68,12 +68,31 @@ unsigned StringToTokens(const string& input, vector<string>& tokens) {
 			}
 		}
 
-		//print out all tokens of the vector 
+		//print out String Literals
 		if (is_string) {
 			cout << "String: " << a << endl;
 			continue;
 		}
 
+		//Check for Identifier Literal
+		bool is_identifi = true;
+
+		for (int i = 0; i < a.size(); i++) {
+			if (isalpha(a[i]) && a.length() == 1) {
+				is_identifi = true;
+			}
+			else {
+				is_identifi = false;
+				continue;
+			}
+		}
+
+		//print out identifier tokens
+		if (is_identifi) {
+			cout << "Identifier: " << a << endl;
+			continue;
+
+		}
 
 
 		  
