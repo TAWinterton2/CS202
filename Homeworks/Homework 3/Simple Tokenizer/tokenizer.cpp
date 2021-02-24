@@ -27,7 +27,7 @@ bool Readline(string str) {
 
 //uses std::istringstream to read strings separated by whitespace characters
 // push a blank string at the end of each line. Return # of tokens read from string
-unsigned StringToTokens(const string& input, vector<string>& tokens) {
+unsigned AnalyzeTokens(vector<string> tokens) {
 	for (auto a : tokens) {
 		cout << ' < ' << a << ' > ' << endl;
 
@@ -45,7 +45,7 @@ unsigned StringToTokens(const string& input, vector<string>& tokens) {
 			}
 			else {
 				is_int = false;
-				continue;
+				
 			}
 		}
 
@@ -60,11 +60,11 @@ unsigned StringToTokens(const string& input, vector<string>& tokens) {
 		for (int i = 0; i < a.size(); i++) {
 			if (a.find(a) != string::npos && a.length() > 1) {
 				is_string = true;
-				continue;
+				
 			}
 			else {
 				is_string = false;
-				continue;
+			
 			}
 		}
 
@@ -83,7 +83,7 @@ unsigned StringToTokens(const string& input, vector<string>& tokens) {
 			}
 			else {
 				is_identifi = false;
-				continue;
+
 			}
 		}
 
