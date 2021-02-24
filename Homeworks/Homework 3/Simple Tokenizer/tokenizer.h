@@ -19,7 +19,7 @@ using std::vector;
 bool Readline(string str);
 
 
-//uses std::istringstream to read strings seperated by whitespace characets. 
+//uses std::istringstream to read strings seperated by whitespace characters
 // push a blank string to the end of each line. Return # of tokens read form the string
 unsigned StringToTokens(const string& input, vector<string>& tokens);
 
