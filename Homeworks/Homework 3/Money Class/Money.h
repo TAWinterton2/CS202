@@ -9,8 +9,10 @@
 
 class Wallet
 {
-	//default constructor 
+	//default constructors, One that can set Wallet = to 0 and one that can take 2 integers, Dollars and cents
 	Wallet(double amount = 0.00);
+	Wallet(int _dollar, int _cents);
+
 
 	//copy constructor
 	Wallet(const Wallet& old);
@@ -21,6 +23,8 @@ class Wallet
 private:
 	double _amount;
 
+	int _dollar;
+	int _cents;
 };
 
 #endif 
