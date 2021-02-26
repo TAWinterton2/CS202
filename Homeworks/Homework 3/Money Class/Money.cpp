@@ -35,3 +35,11 @@ Wallet& Wallet::operator-=(const Wallet& rhs) {
 	_cents += rhs._cents;
 	return *this;
 }
+
+//Overloat Operator (+) 
+
+Wallet operator+ (const Wallet& rhs, const Wallet& lhs) {
+	auto temp{ lhs };
+	temp += rhs;
+	return temp;
+}
