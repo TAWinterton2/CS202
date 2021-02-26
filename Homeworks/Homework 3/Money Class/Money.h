@@ -65,4 +65,8 @@ private:
 
 };
 
+Money operator-(const Money& lhs, const Money& rhs);
+Money operator *(const Money& lhs, const Money& rhs);
+Money operator /(const Money& lhs, const Money& rhs);
+
 #endif 

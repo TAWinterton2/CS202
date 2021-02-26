@@ -10,7 +10,7 @@ Money::Money(double total) : _total(total) {
 	
 }
 
-Money::Money(int cents, int dollars) : _cents(cents * 0.01), _dollar(dollars), _total(_cents + _dollar) {
+Money::Money(int cents, int dollars) : _cents(cents * 0.01), _dollar(dollars) {
 	
 
 }
@@ -65,7 +65,6 @@ Money& Money::operator*=(const Money& rhs) {
 Money& Money::operator /= (const Money& rhs) {
 	_dollar = rhs._dollar;
 	_cents = rhs._cents;
-
 
 	return *this;
 }
