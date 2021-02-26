@@ -4,11 +4,12 @@
 
 
 
-//default constructor
+//default constructor(s)
 Wallet::Wallet(double amount) : _amount(amount) {
 	std::cout << "New Wallet Created " << std::endl;
 	std::cout << "Current Amount: " << _amount << std::endl;
 }
+Wallet::Wallet(double amount){}
 
 //copy constructor
 Wallet::Wallet(const Wallet& old) : _amount(old._amount) {
@@ -19,6 +20,8 @@ Wallet::Wallet(const Wallet& old) : _amount(old._amount) {
 Wallet::~Wallet() {
 	std::cout << "Wallet Deleted" << std::endl;
 }
+
+
 
 
 //Overload Operators (+=)
@@ -36,6 +39,14 @@ Wallet& Wallet::operator-=(const Wallet& rhs) {
 	return *this;
 }
 
+//Overload Operator (*=)
+Wallet& Wallet::operator*=(const Wallet& rhs) {
+	_dollar *= rhs._dollar;
+	_cents *= rhs._cents;
+
+	return *this;
+}
+
 //Overload Operator (+) 
 
 Wallet operator+ (const Wallet& rhs, const Wallet& lhs) {
@@ -45,9 +56,11 @@ Wallet operator+ (const Wallet& rhs, const Wallet& lhs) {
 }
 
 //Overload Operator (-)
-Wallet operator- (const Wallet& rhs, const Wallet lhs) {
+Wallet operator- (const Wallet& rhs, const Wallet& lhs) {
 	auto temp{ lhs };
-	temp += rhs;
+	temp -= rhs;
 	return temp;
 
 }
+
+
