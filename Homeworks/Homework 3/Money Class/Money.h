@@ -25,6 +25,9 @@ class Wallet
 	//Overload Operators (+=)
 	Wallet& operator +=(const Wallet& rhs);
 
+	//Overload Operator (-=_
+	Wallet& operator -=(const Wallet& rhs);
+
 
 
 

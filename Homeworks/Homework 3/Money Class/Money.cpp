@@ -25,6 +25,13 @@ Wallet::~Wallet() {
 Wallet& Wallet::operator+=(const Wallet& rhs) {
 	_dollar += rhs._dollar;
 	_cents += rhs._cents;
+	return *this;
 
+}
 
+//Overload Operator (-=)
+Wallet& Wallet::operator-=(const Wallet& rhs) {
+	_dollar -= rhs._dollar;
+	_cents += rhs._cents;
+	return *this;
 }
