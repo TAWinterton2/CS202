@@ -53,8 +53,9 @@ Money& Money::operator-=(const Money& rhs) {
 //Overload Operator (*=)
 Money& Money::operator*=(const Money& rhs) {
 	_dollar *= rhs._dollar;
-	_cents *= rhs._cents;
-	_total = _dollar + _cents;
+	_total += _dollar;
+	_cents *= rhs._cents * 0.01;
+	_total += _dollar;
 
 	return *this;
 }
@@ -63,7 +64,7 @@ Money& Money::operator*=(const Money& rhs) {
 Money& Money::operator /= (const Money& rhs) {
 	_dollar = rhs._dollar;
 	_cents = rhs._cents;
-	_total = _dollar + _cents;
+
 
 	return *this;
 }
