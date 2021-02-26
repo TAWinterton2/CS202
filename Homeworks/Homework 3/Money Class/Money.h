@@ -13,6 +13,10 @@ class Wallet
 	//Operator for (+)
 	friend Wallet operator+ (const Wallet& rhs, const Wallet& lhs);
 
+	//Operator for (-)
+	friend Wallet operator- (const Wallet& rhs, const Wallet& lhs);
+
+
 public:
 
 	//default constructors, One that can set Wallet = to 0 and one that can take 2 integers, Dollars and cents
@@ -31,7 +35,7 @@ public:
 	//Overload Operators (+=)
 	Wallet& operator +=(const Wallet& rhs);
 
-	//Overload Operator (-=_
+	//Overload Operator (-=)
 	Wallet& operator -=(const Wallet& rhs);
 
 

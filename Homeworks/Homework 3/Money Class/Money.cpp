@@ -36,10 +36,18 @@ Wallet& Wallet::operator-=(const Wallet& rhs) {
 	return *this;
 }
 
-//Overloat Operator (+) 
+//Overload Operator (+) 
 
 Wallet operator+ (const Wallet& rhs, const Wallet& lhs) {
 	auto temp{ lhs };
 	temp += rhs;
 	return temp;
+}
+
+//Overload Operator (-)
+Wallet operator- (const Wallet& rhs, const Wallet lhs) {
+	auto temp{ lhs };
+	temp += rhs;
+	return temp;
+
 }
