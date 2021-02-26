@@ -19,3 +19,12 @@ Wallet::Wallet(const Wallet& old) : _amount(old._amount) {
 Wallet::~Wallet() {
 	std::cout << "Wallet Deleted" << std::endl;
 }
+
+
+//Overload Operators (+=)
+Wallet& Wallet::operator+=(const Wallet& rhs) {
+	_dollar += rhs._dollar;
+	_cents += rhs._cents;
+
+
+}
