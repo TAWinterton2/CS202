@@ -1,23 +1,21 @@
 #include<iostream>
 #include<iomanip>
+#include<cmath>
 #include "Money.h"
 
 
 
 //default constructor(s)
-Money::Money(double amount) : _amount(amount) {
-	std::cout << "New Wallet Created " << std::endl;
-	std::cout << "Current Amount: " << _amount << std::endl;
-}
-Money::Money(double amount){
-
+Money::Money(double total) : _total(total) {
+	
 }
 
-Money::Money(int dollar, int cents) : _dollar(dollar), _cents(cents) {
+Money::Money(int cents, int dollars) : _dollar(dollars), _cents(cents * 0.01) {
+	_total = _dollar + _cents;
 
 }
 //copy constructor
-Money::Money(const Money& old) : _amount(old._amount) {
+Money::Money(const Money& old) : _total(old._total) {
 
 }
 
@@ -29,7 +27,7 @@ Money::~Money() {
 
 //Outstream Operator
 std::ostream& operator << (std::ostream& os, const Money& rhs) {
-	return os << rhs._amount << std::endl;
+	return os << "$" << rhs._total;
 
 }
 
@@ -37,6 +35,8 @@ std::ostream& operator << (std::ostream& os, const Money& rhs) {
 Money& Money::operator+=(const Money& rhs) {
 	_dollar += rhs._dollar;
 	_cents += rhs._cents;
+	_total = _dollar + _cents;
+
 	return *this;
 
 }
@@ -45,6 +45,8 @@ Money& Money::operator+=(const Money& rhs) {
 Money& Money::operator-=(const Money& rhs) {
 	_dollar -= rhs._dollar;
 	_cents += rhs._cents;
+	_total = _dollar + _cents;
+
 	return *this;
 }
 
@@ -52,6 +54,7 @@ Money& Money::operator-=(const Money& rhs) {
 Money& Money::operator*=(const Money& rhs) {
 	_dollar *= rhs._dollar;
 	_cents *= rhs._cents;
+	_total = _dollar + _cents;
 
 	return *this;
 }
@@ -60,6 +63,7 @@ Money& Money::operator*=(const Money& rhs) {
 Money& Money::operator /= (const Money& rhs) {
 	_dollar = rhs._dollar;
 	_cents = rhs._cents;
+	_total = _dollar + _cents;
 
 	return *this;
 }

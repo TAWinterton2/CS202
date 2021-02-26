@@ -26,9 +26,9 @@ class Money
 public:
 
 	//default constructors, One that can set Wallet = to 0 and one that can take 2 integers, Dollars and cents
-	Money(double amount = 0.00);
-	Money(double amount);
-	Money(int dollar, int cents);
+	Money(double total = 0.00);
+	
+	Money(int cents , int dollars  );
 	
 
 	//copy constructor
@@ -56,11 +56,12 @@ public:
 
 
 private:
-	double _amount;
+	double _total;
 
-	int _dollar;
-	int _cents;
+	int _dollar = 0;
+	int _cents = 0;
 
+	
 
 };
 
