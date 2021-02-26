@@ -56,11 +56,11 @@ public:
 
 
 private:
+	
+	int _dollar;
+	int _cents;
+
 	double _total;
-
-	int _dollar = 0;
-	int _cents = 0;
-
 	
 
 };

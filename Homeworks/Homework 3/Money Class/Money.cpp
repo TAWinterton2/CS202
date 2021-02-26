@@ -10,8 +10,8 @@ Money::Money(double total) : _total(total) {
 	
 }
 
-Money::Money(int cents, int dollars) : _dollar(dollars), _cents(cents * 0.01) {
-	_total = _dollar + _cents;
+Money::Money(int cents, int dollars) : _cents(cents * 0.01), _dollar(dollars), _total(_cents + _dollar) {
+	
 
 }
 //copy constructor
@@ -21,12 +21,13 @@ Money::Money(const Money& old) : _total(old._total) {
 
 //destructor
 Money::~Money() {
-	std::cout << "Wallet Deleted" << std::endl;
+	
 }
 
 
 //Outstream Operator
 std::ostream& operator << (std::ostream& os, const Money& rhs) {
+
 	return os << "$" << rhs._total;
 
 }
