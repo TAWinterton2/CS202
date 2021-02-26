@@ -44,6 +44,9 @@ public:
 	//Overload Operator(*=)
 	Wallet& operator *=(const Wallet& rhs);
 
+	//Overload Operator(/=)
+	Wallet& operator /= (const Wallet& rhs);
+
 
 
 
