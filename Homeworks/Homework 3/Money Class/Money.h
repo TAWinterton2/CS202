@@ -7,48 +7,48 @@
 
 
 
-class Wallet
+class Money
 {
 
 	//Operator for (+)
-	friend Wallet operator+ (const Wallet& rhs, const Wallet& lhs);
+	friend Money operator+ (const Money& rhs, const Money& lhs);
 
 	//Operator for (-)
-	friend Wallet operator- (const Wallet& rhs, const Wallet& lhs);
+	friend Money operator- (const Money& rhs, const Money& lhs);
 
 	//Operator for (*)
 	//friend Wallet operator* (const Wallet& rhs, const Wallet& lhs);
 
 	//Operator for outstream
-	friend std::ostream& operator << (std::ostream&, const Wallet& rhs);
+	friend std::ostream& operator << (std::ostream&, const Money& rhs);
 
 	
 public:
 
 	//default constructors, One that can set Wallet = to 0 and one that can take 2 integers, Dollars and cents
-	Wallet(double amount = 0.00);
-	Wallet(double amount);
-	Wallet(int dollar, int cents);
+	Money(double amount = 0.00);
+	Money(double amount);
+	Money(int dollar, int cents);
 	
 
 	//copy constructor
-	Wallet(const Wallet& old);
+	Money(const Money& old);
 
 	//destructor 
-	~Wallet();
+	~Money();
 
 
 	//Overload Operators (+=)
-	Wallet& operator +=(const Wallet& rhs);
+	Money& operator +=(const Money& rhs);
 
 	//Overload Operator (-=)
-	Wallet& operator -=(const Wallet& rhs);
+	Money& operator -=(const Money& rhs);
 
 	//Overload Operator(*=)
-	Wallet& operator *=(const Wallet& rhs);
+	Money& operator *=(const Money& rhs);
 
 	//Overload Operator(/=)
-	Wallet& operator /= (const Wallet& rhs);
+	Money& operator /= (const Money& rhs);
 
 
 

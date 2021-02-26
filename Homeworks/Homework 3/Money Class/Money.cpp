@@ -5,36 +5,36 @@
 
 
 //default constructor(s)
-Wallet::Wallet(double amount) : _amount(amount) {
+Money::Money(double amount) : _amount(amount) {
 	std::cout << "New Wallet Created " << std::endl;
 	std::cout << "Current Amount: " << _amount << std::endl;
 }
-Wallet::Wallet(double amount){
+Money::Money(double amount){
 
 }
 
-Wallet::Wallet(int dollar, int cents) : _dollar(dollar), _cents(cents) {
+Money::Money(int dollar, int cents) : _dollar(dollar), _cents(cents) {
 
 }
 //copy constructor
-Wallet::Wallet(const Wallet& old) : _amount(old._amount) {
+Money::Money(const Money& old) : _amount(old._amount) {
 
 }
 
 //destructor
-Wallet::~Wallet() {
+Money::~Money() {
 	std::cout << "Wallet Deleted" << std::endl;
 }
 
 
 //Outstream Operator
-std::ostream& operator << (std::ostream& os, const Wallet& rhs) {
+std::ostream& operator << (std::ostream& os, const Money& rhs) {
 	return os << rhs._amount << std::endl;
 
 }
 
 //Overload Operators (+=)
-Wallet& Wallet::operator+=(const Wallet& rhs) {
+Money& Money::operator+=(const Money& rhs) {
 	_dollar += rhs._dollar;
 	_cents += rhs._cents;
 	return *this;
@@ -42,14 +42,14 @@ Wallet& Wallet::operator+=(const Wallet& rhs) {
 }
 
 //Overload Operator (-=)
-Wallet& Wallet::operator-=(const Wallet& rhs) {
+Money& Money::operator-=(const Money& rhs) {
 	_dollar -= rhs._dollar;
 	_cents += rhs._cents;
 	return *this;
 }
 
 //Overload Operator (*=)
-Wallet& Wallet::operator*=(const Wallet& rhs) {
+Money& Money::operator*=(const Money& rhs) {
 	_dollar *= rhs._dollar;
 	_cents *= rhs._cents;
 
@@ -57,7 +57,7 @@ Wallet& Wallet::operator*=(const Wallet& rhs) {
 }
 
 //Overload Operator (/=)
-Wallet& Wallet:: operator /= (const Wallet& rhs) {
+Money& Money::operator /= (const Money& rhs) {
 	_dollar = rhs._dollar;
 	_cents = rhs._cents;
 
@@ -66,14 +66,14 @@ Wallet& Wallet:: operator /= (const Wallet& rhs) {
 
 //Overload Operator (+) 
 
-Wallet operator+ (const Wallet& rhs, const Wallet& lhs) {
+Money operator+ (const Money& rhs, const Money& lhs) {
 	auto temp{ lhs };
 	temp += rhs;
 	return temp;
 }
 
 //Overload Operator (-)
-Wallet operator- (const Wallet& rhs, const Wallet& lhs) {
+Money operator- (const Money& rhs, const Money& lhs) {
 	auto temp{ lhs };
 	temp -= rhs;
 	return temp;
