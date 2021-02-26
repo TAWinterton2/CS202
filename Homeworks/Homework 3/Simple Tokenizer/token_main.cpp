@@ -12,7 +12,7 @@ using std::string;
 using std::vector;
 
 
-int main() {
+int main(int argc, char** argv) {
 	string user_input;
 	vector <string> tokens;
 

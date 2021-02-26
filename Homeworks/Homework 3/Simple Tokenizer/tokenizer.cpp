@@ -14,7 +14,7 @@ using std::istringstream;
 
 
 //return true if it read the string and false if the string was a blank line 
-bool Readline(string str) {
+bool Readline(string &str) {
 	getline(cin, str);
 
 	if (str.empty()) {
@@ -43,7 +43,7 @@ unsigned StringToTokens(const string& input, vector<string>& tokens) {
 //Analyze Tokens and Rpints out token and type
 void AnalyzeTokens(vector<string> tokens) {
 	for (auto a : tokens) {
-		cout << ' < ' << a << ' > ' << endl;
+		
 
 		//check for whitespace
 		if (a.size() == 0) {
@@ -59,7 +59,7 @@ void AnalyzeTokens(vector<string> tokens) {
 			}
 			else {
 				is_int = false;
-				
+				continue;
 			}
 		}
 
@@ -78,7 +78,7 @@ void AnalyzeTokens(vector<string> tokens) {
 			}
 			else {
 				is_string = false;
-			
+				break;
 			}
 		}
 
@@ -97,6 +97,7 @@ void AnalyzeTokens(vector<string> tokens) {
 			}
 			else {
 				is_identifi = false;
+				break;
 
 			}
 		}

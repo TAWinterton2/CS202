@@ -16,7 +16,7 @@ using std::vector;
 
 //uses getline() to get in text from user or txt file
 //return true if the read the string and false if the string was a blank line 
-bool Readline(string str);
+bool Readline(string &str);
 
 
 //uses std::istringstream to read strings seperated by whitespace characters
