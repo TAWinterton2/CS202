@@ -85,6 +85,17 @@ Money operator- (const Money& rhs, const Money& lhs) {
 
 }
 
+//Overload Operator (*) 
+Money operator*(Money lhs, const Money& rhs) {
+	return lhs *= rhs;
+}
+
+//Overload Operator(/)
+Money operator /(Money lhs, const Money& rhs) {
+	return lhs /= rhs;
+
+}
+
 
 //bool opertor ==
 bool operator == (const Money& lhs, const Money& rhs) {
