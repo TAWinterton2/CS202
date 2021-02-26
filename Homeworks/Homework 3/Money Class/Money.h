@@ -19,6 +19,9 @@ class Wallet
 	//Operator for (*)
 	//friend Wallet operator* (const Wallet& rhs, const Wallet& lhs);
 
+	//Operator for outstream
+	friend std::ostream& operator << (std::ostream&, const Wallet& rhs);
+
 	
 public:
 

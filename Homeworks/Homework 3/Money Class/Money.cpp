@@ -22,7 +22,11 @@ Wallet::~Wallet() {
 }
 
 
+//Outstream Operator
+std::ostream& operator << (std::ostream& os, const Wallet& rhs) {
+	return os << rhs._amount << std::endl;
 
+}
 
 //Overload Operators (+=)
 Wallet& Wallet::operator+=(const Wallet& rhs) {
