@@ -86,3 +86,28 @@ Money operator- (const Money& rhs, const Money& lhs) {
 }
 
 
+//bool opertor ==
+bool operator == (const Money& lhs, const Money& rhs) {
+	return lhs._total < rhs._total;
+}
+
+bool operator < (const Money& lhs, const Money& rhs) {
+	return lhs._total < rhs._total;
+}
+
+bool operator !=(const Money& lhs, const Money& rhs) {
+	return !(rhs == lhs);
+}
+
+bool operator >(const Money& lhs, const Money& rhs) {
+	return rhs<lhs;
+}
+
+bool operator <=(const Money& lhs, const Money& rhs) {
+	return !(rhs < lhs);
+}
+
+bool operator >=(const Money& lhs, const Money& rhs) {
+	return !(rhs < lhs);
+
+}
