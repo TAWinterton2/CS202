@@ -22,6 +22,13 @@ class Money
 	//Operator for outstream
 	friend std::ostream& operator << (std::ostream&, const Money& rhs);
 
+	//Operator for (==)
+	friend bool operator ==(const Money& lhs, const Money& rhs);
+
+	//Operator for (<)
+	friend bool operator <(const Money& lhs, const Money& rhs);
+
+
 	
 public:
 
@@ -68,5 +75,14 @@ private:
 Money operator-(const Money& lhs, const Money& rhs);
 Money operator *(const Money& lhs, const Money& rhs);
 Money operator /(const Money& lhs, const Money& rhs);
+
+//bool operators
+bool operator !=(const Money& lhs, const Money& rhs);
+bool operator >=(const Money& lhs, const Money& rhs);
+bool operator <=(const Money& lhs, const Money& rhs);
+bool operator >(const Money& lhs, const Money& rhs);
+
+
+
 
 #endif 
