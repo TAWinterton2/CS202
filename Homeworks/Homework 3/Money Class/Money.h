@@ -7,18 +7,19 @@
 
 
 
-class Money
+class Wallet
 {
 	//default constructor 
-	Money(double amount = 0.00);
+	Wallet(double amount = 0.00);
 
 	//copy constructor
-	Money(const Money& old);
+	Wallet(const Wallet& old);
 
 	//destructor 
-	~Money();
+	~Wallet();
 
-
+private:
+	double _amount;
 
 };
 
