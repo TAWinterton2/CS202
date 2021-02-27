@@ -8,7 +8,7 @@
 
 
 //default constructor(s)
-Money::Money(): _total(0.00) {
+Money::Money() : _total(0.00), _dollar(0), _cents(0) {
 
 }
 
@@ -16,7 +16,12 @@ Money::Money(double total ) : _cents(0), _dollar(0), _total(total) {
 	
 }
 
-Money::Money(int cents, int dollars) : _cents(cents * 0.01), _dollar(dollars), _total(_cents + _dollar) {
+Money::Money(int cents): _cents(cents * 0.01), _dollar(0), _total(_cents) {
+
+}
+
+
+Money::Money(int cents, int dollars) : _cents((double)cents * 0.01), _dollar(dollars), _total(((double)cents*0.01) + dollars) {
 	
 
 }
@@ -50,8 +55,9 @@ std::ostream& operator << (std::ostream& os, const Money& rhs) {
 //Overload Operators (+=)
 Money& Money::operator+=(const Money& rhs) {
 	_dollar += rhs._dollar;
+	_total += _dollar;
 	_cents += rhs._cents;
-	_total = _dollar + _cents;
+	_total += _cents;
 
 	return *this;
 

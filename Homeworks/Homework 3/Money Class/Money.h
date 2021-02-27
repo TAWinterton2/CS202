@@ -36,6 +36,8 @@ public:
 	
 	Money(double total);
 	
+	Money(int cents);
+
 	Money(int cents, int dollars);
 	
 
@@ -67,8 +69,8 @@ public:
 
 private:
 	
-	int _dollar;
-	int _cents;
+	double _dollar;
+	double _cents;
 
 	double _total;
 	
