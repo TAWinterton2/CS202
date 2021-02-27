@@ -8,6 +8,10 @@
 
 
 //default constructor(s)
+Money::Money(): _total(0.00) {
+
+}
+
 Money::Money(double total ) : _cents(0), _dollar(0), _total(total) {
 	
 }
@@ -16,8 +20,10 @@ Money::Money(int cents, int dollars) : _cents(cents * 0.01), _dollar(dollars), _
 	
 
 }
+
+
 //copy constructor
-Money::Money(const Money& old) : _total(old._total) {
+Money::Money(const Money& old) : _total(old._total), _dollar(old._dollar), _cents(old._cents) {
 
 }
 
@@ -29,8 +35,13 @@ Money::~Money() {
 
 //Outstream Operator
 std::ostream& operator << (std::ostream& os, const Money& rhs) {
-
-	return os << "$" << std::setprecision(2)  << std:: fixed << rhs._total;
+	if (rhs._total < 0) {
+		return os << "-$" << std::setprecision(2) << std::fixed << fabs(rhs._total);
+	}
+	else {
+		return os << "$" << std::setprecision(2) << std::fixed << rhs._total;
+	}
+	
 
 }
 
