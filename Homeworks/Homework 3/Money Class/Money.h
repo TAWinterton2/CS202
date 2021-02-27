@@ -34,7 +34,7 @@ public:
 	//default constructors, One that can set Wallet = to 0 and one that can take 2 integers, Dollars and cents
 	Money(double total = 0.00);
 	
-	Money(int cents , int dollars  );
+	Money(int dollars, int cents);
 	
 
 	//copy constructor
@@ -65,8 +65,8 @@ public:
 
 private:
 	
-	int _dollar;
-	int _cents;
+	double _dollar = 0.00;
+	double _cents = 0.00;
 
 	double _total;
 	

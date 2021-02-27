@@ -1,16 +1,18 @@
 #include<iostream>
+#include<ios>
 #include<iomanip>
 #include<cmath>
+#include<numeric>
 #include "Money.h"
 
 
 
 //default constructor(s)
-Money::Money(double total) : _total(total) {
+Money::Money(double total ) : _cents(0), _dollar(0), _total(total) {
 	
 }
 
-Money::Money(int cents, int dollars) : _cents(cents * 0.01), _dollar(dollars) {
+Money::Money(int cents, int dollars) : _cents(cents * 0.01), _dollar(dollars), _total(_cents + _dollar) {
 	
 
 }
@@ -28,7 +30,7 @@ Money::~Money() {
 //Outstream Operator
 std::ostream& operator << (std::ostream& os, const Money& rhs) {
 
-	return os << "$" << rhs._total;
+	return os << "$" << std::setprecision(2)  << std:: fixed << rhs._total;
 
 }
 
