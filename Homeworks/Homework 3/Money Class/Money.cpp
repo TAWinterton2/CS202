@@ -45,6 +45,8 @@ std::ostream& operator << (std::ostream& os, const Money& rhs) {
 
 }
 
+
+//Arithmitic Operators 
 //Overload Operators (+=)
 Money& Money::operator+=(const Money& rhs) {
 	_dollar += rhs._dollar;
@@ -110,28 +112,35 @@ Money operator /(Money lhs, const Money& rhs) {
 }
 
 
-//bool opertor ==
+//Bool opertor
+
+//Bool operator(==)
 bool operator == (const Money& lhs, const Money& rhs) {
-	return lhs._total < rhs._total;
+	return lhs._total == rhs._total;
 }
 
+//Bool operator (<)
 bool operator < (const Money& lhs, const Money& rhs) {
 	return lhs._total < rhs._total;
 }
 
+//Bool operator (!=)
 bool operator !=(const Money& lhs, const Money& rhs) {
 	return !(rhs == lhs);
 }
 
+//Bool operator (>)
 bool operator >(const Money& lhs, const Money& rhs) {
 	return rhs<lhs;
 }
 
+//Bool operator (<=)
 bool operator <=(const Money& lhs, const Money& rhs) {
 	return !(rhs < lhs);
 }
 
+//Bool operator (>=)
 bool operator >=(const Money& lhs, const Money& rhs) {
-	return !(rhs < lhs);
+	return !(rhs > lhs);
 
 }
