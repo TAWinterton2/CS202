@@ -5,7 +5,7 @@
 #include "Money.h"
 #include "Money.h"   // Double inclusion test
 
-
+/*
 TEST_CASE("Money ctors and operator<<") {
 	const Money con0;
 	const Money con1(2);
@@ -76,7 +76,7 @@ TEST_CASE("Money relational operators") {
 	REQUIRE(!(m0 >= m1));
 	REQUIRE((m1 >= m0));
 }
-
+*/
 
 TEST_CASE("Money arithmetic operators") {
 	const Money m0;
@@ -87,7 +87,7 @@ TEST_CASE("Money arithmetic operators") {
 
 	m1 -= mc1;
 	REQUIRE(m1 == m0);
-
+	/*
 	m1 += mc1;
 	REQUIRE(m1 == mc1);
 
@@ -123,5 +123,5 @@ TEST_CASE("Money arithmetic operators") {
 
 	m2 = Money(4.2);
 	(m2 *= 2.0) = m0;
-	REQUIRE(m2 == m0);
+	REQUIRE(m2 == m0);*/
 }
