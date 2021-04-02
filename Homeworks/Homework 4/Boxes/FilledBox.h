@@ -17,10 +17,10 @@ public:
 	FilledBox(int width, int hieght );
 
 	//return type of box
-	string type(FilledBox box);
+	string type();
 
 	//print function to print out box
-	void print(ostream& image);
+	void print(ostream&);
 
 	
 

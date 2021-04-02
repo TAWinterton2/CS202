@@ -10,7 +10,9 @@ public:
 	HollowBox(int width, int height);
 
 	//box type
-	string type(HollowBox box);
+	string type();
+
+
 
 };
 

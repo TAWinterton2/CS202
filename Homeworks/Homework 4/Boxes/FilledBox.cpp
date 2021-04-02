@@ -13,11 +13,11 @@ FilledBox::FilledBox(int width, int hieght)   {
 }
 
 //box type
-string FilledBox::type(FilledBox box) {
+string FilledBox::type() {
 	cout << "This is a Filled Box" << std::endl;
 }
 
 //print
-void FilledBox::print(ostream& image) {
+void FilledBox::print(ostream& ) {
 
 }
