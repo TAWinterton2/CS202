@@ -15,8 +15,6 @@ Box::Box() {
 
 }
 
-
-
 //accessor functions
 void Box::getWidth(Box box) {
 	cout << box._width << endl;
