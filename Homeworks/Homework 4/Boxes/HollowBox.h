@@ -9,6 +9,8 @@ public:
 	//constructor
 	HollowBox(int width, int height);
 
+	//box type
+	string type(HollowBox box);
 
 };
 

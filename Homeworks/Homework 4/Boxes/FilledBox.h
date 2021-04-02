@@ -14,10 +14,10 @@ public:
 	FilledBox();
 
 	//constructor w/ width and hieght
-	FilledBox(int width, int hieght);
+	FilledBox(int width, int hieght );
 
 	//return type of box
-	void type(FilledBox box);
+	string type(FilledBox box);
 
 	//print function to print out box
 	void print(ostream& image);
