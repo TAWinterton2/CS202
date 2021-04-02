@@ -13,6 +13,10 @@ public:
 	//return type of box
 	void type(FilledBox box);
 
+
+	//print function to print out box
+	void print(ostream&);
+
 private:
 	int _width;
 	int _hieght;
