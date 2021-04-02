@@ -33,7 +33,7 @@ int Box::setHieght(int hieght, Box box) {
 
 //pure virtuals
 void print(ostream& os){}
-
+string type(){}
 
 
 //overloaded operators
