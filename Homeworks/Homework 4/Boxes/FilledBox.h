@@ -4,6 +4,9 @@ class FilledBox : public Box
 {
 public:
 
+	using Box::Box;
+
+
 	//default constructor 
 	FilledBox();
 
@@ -18,8 +21,7 @@ public:
 	void print(ostream&);
 
 private:
-	int _width;
-	int _hieght;
+	
 
 };
 

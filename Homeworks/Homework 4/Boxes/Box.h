@@ -1,8 +1,11 @@
 #pragma once
 #include<iostream>
 #include<ostream>
+#include<string>
+
 using std::cout;
 using std::ostream;
+using std::string;
 
 class Box
 {
@@ -25,6 +28,10 @@ public:
 	//mutator functions 
 	int setWidth(int width, Box box);
 	int setHieght(int Height, Box box);
+
+	//pure virtuals
+	virtual void print(ostream& os);
+	virtual string type();
 
 
 private:

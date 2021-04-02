@@ -3,10 +3,9 @@
 
 
 //default constructor
-FilledBox::FilledBox():_width(1), _hieght(1) {
+FilledBox::FilledBox():Box(1), Box(1) {
 
 }
-
 
 //constructor
 FilledBox::FilledBox(int width, int hieght) : _width(width), _hieght(hieght) {

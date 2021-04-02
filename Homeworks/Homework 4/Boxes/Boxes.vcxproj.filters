@@ -21,12 +21,18 @@
     <ClInclude Include="FilledBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="HollowBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FilledBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HollowBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

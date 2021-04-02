@@ -31,6 +31,11 @@ int Box::setHieght(int hieght, Box box) {
 	box._hieght = hieght;
 }
 
+//pure virtuals
+void print(ostream& os){}
+
+
+
 //overloaded operators
 ostream& operator<< (ostream& os, const Box& box) {
 	box.print(os);
