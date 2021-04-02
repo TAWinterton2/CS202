@@ -1,12 +1,21 @@
 #pragma once
+#include<iostream>
+#include<ostream>
+using std::cout;
+using std::ostream;
+
 class Box
 {
+
+	friend ostream& operator << (ostream& out, const Box &box){
+
+	}
+
 public:
 	//default constructor
 	Box();
 
-	//constructor w/ width and height
-	Box(int width, int hieght);
+	
 
 	//accessor functions
 	void getWidth(Box box);

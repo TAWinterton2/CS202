@@ -15,10 +15,7 @@ Box::Box() {
 
 }
 
-//constructor w/ width and hieght
-Box::Box(int width, int hieght) : _width(width), _hieght(hieght) {
 
-}
 
 //accessor functions
 void Box::getWidth(Box box) {
@@ -34,4 +31,10 @@ int Box::setWidth(int width, Box box) {
 }
 int Box::setHieght(int hieght, Box box) {
 	box._hieght = hieght;
+}
+
+//overloaded operators
+ostream& operator<< (ostream& os, const Box& box) {
+	box.print(os);
+	return os;
 }
