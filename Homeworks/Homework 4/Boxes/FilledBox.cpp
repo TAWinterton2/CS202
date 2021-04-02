@@ -12,3 +12,10 @@ FilledBox::FilledBox():_width(1), _hieght(1) {
 FilledBox::FilledBox(int width, int hieght) : _width(width), _hieght(hieght) {
 
 }
+
+//box type
+void FilledBox::type(FilledBox box) {
+	cout << "This is a Filled Box" << std::endl;
+}
+
+//
