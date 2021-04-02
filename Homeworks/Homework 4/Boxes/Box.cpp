@@ -24,7 +24,14 @@ Box::Box(int width, int hieght) : _width(width), _hieght(hieght) {
 void Box::getWidth(Box box) {
 	cout << box._width << endl;
 }
-
 void Box::getHieght(Box box) {
 	cout << box._hieght << endl;
+}
+
+//Mutator functions
+int Box::setWidth(int width, Box box) {
+	box._width = width;
+}
+int Box::setHieght(int hieght, Box box) {
+	box._hieght = hieght;
 }

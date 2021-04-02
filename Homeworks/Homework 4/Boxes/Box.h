@@ -13,6 +13,9 @@ public:
 
 	void getHieght(Box box);
 
+	//mutator functions 
+	int setWidth(int width, Box box);
+	int setHieght(int Height, Box box);
 
 
 private:
