@@ -8,5 +8,7 @@ using std::cin;
 using std::endl;
 
 //default constructor
-HollowBox::HollowBox(){}
+HollowBox::HollowBox():{
+
+}
 

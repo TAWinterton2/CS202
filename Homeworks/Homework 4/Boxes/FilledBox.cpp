@@ -3,7 +3,7 @@
 
 
 //default constructor
-FilledBox::FilledBox():Box(setWidth(1), setHieght(1)) {
+FilledBox::FilledBox(): Box() {
 
 }
 

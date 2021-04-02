@@ -10,9 +10,7 @@ using std::string;
 class Box
 {
 
-	friend ostream& operator << (ostream& out, const Box &box){
-
-	}
+	friend ostream& operator << (ostream& out, const Box& box);
 
 public:
 	//default constructor

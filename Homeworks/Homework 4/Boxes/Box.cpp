@@ -11,7 +11,7 @@ using std::endl;
 
 
 //default constructor 
-Box::Box() {
+Box::Box(): _width(1), _hieght(1) {
 
 }
 

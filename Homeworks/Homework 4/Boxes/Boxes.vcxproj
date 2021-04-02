@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="boxtest3.cpp" />
     <ClCompile Include="FilledBox.cpp" />
     <ClCompile Include="HollowBox.cpp" />
   </ItemGroup>
