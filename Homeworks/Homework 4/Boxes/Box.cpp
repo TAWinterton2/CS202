@@ -16,19 +16,19 @@ Box::Box() {
 }
 
 //accessor functions
-void Box::getWidth(Box box) {
-	cout << box._width << endl;
+int Box::getWidth() {
+	return(_width);
 }
-void Box::getHieght(Box box) {
-	cout << box._hieght << endl;
+int Box::getHieght() {
+	return(_hieght);
 }
 
 //Mutator functions
-int Box::setWidth(int width, Box box) {
-	box._width = width;
+int Box::setWidth(int width ) {
+	_width = width;
 }
-int Box::setHieght(int hieght, Box box) {
-	box._hieght = hieght;
+int Box::setHieght(int hieght) {
+	_hieght = hieght;
 }
 
 //pure virtuals

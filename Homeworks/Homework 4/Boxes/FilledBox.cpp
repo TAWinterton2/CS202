@@ -3,13 +3,13 @@
 
 
 //default constructor
-FilledBox::FilledBox():Box(1), Box(1) {
+FilledBox::FilledBox():Box(setWidth(1), setHieght(1)) {
 
 }
 
 //constructor
-FilledBox::FilledBox(int width, int hieght) : _width(width), _hieght(hieght) {
-
+FilledBox::FilledBox(int width, int hieght)   {
+	
 }
 
 //box type
@@ -18,3 +18,6 @@ void FilledBox::type(FilledBox box) {
 }
 
 //print
+void FilledBox::print(ostream& image) {
+
+}

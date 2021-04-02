@@ -10,7 +10,5 @@ public:
 	HollowBox(int width, int height);
 
 
-private:
-	int _width, _hieght;
 };
 

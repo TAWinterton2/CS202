@@ -18,18 +18,16 @@ public:
 	//default constructor
 	Box();
 
-	
-
 	//accessor functions
-	void getWidth(Box box);
+	int getWidth();
 
-	void getHieght(Box box);
+	int getHieght();
 
 	//mutator functions 
-	int setWidth(int width, Box box);
-	int setHieght(int Height, Box box);
+	int setWidth(int width);
+	int setHieght(int Height);
 
-	//pure virtuals
+	//pure virtuals 
 	virtual void print(ostream& os);
 	virtual string type();
 
