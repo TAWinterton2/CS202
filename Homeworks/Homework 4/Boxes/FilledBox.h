@@ -4,8 +4,16 @@ class FilledBox : public Box
 {
 public:
 
-private:
+	//default constructor 
+	FilledBox();
 
+	//constructor w/ width and hieght
+	FilledBox(int width, int hieght);
+
+
+private:
+	int _width;
+	int _hieght;
 
 };
 
