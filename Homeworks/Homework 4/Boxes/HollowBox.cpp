@@ -21,7 +21,7 @@ HollowBox::HollowBox(int width, int height): Box(width, height) {
 
 //type function 
 string HollowBox::type() {
-	cout << "This is a HolowBox" << endl;
+	return("This is a hollow box");
 }
 
 //print

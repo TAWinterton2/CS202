@@ -14,7 +14,7 @@ FilledBox::FilledBox(int width, int hieght)   {
 
 //box type
 string FilledBox::type() {
-	cout << "This is a Filled Box" << std::endl;
+	return("This is a filled box");
 }
 
 //print
