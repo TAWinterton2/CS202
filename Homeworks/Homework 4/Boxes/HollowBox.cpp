@@ -7,13 +7,15 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+
 //default constructor
 HollowBox::HollowBox() : Box(){
 
 }
 
+
 //constructor w/ parameters
-HollowBox::HollowBox(int width, int height) {
+HollowBox::HollowBox(int width, int height): Box(width, height) {
 
 }
 
@@ -21,3 +23,5 @@ HollowBox::HollowBox(int width, int height) {
 string HollowBox::type() {
 	cout << "This is a HolowBox" << endl;
 }
+
+//print

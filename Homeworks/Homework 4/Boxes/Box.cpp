@@ -41,3 +41,6 @@ ostream& operator<< (ostream& os, const Box& box) {
 	box.print(os);
 	return os;
 }
+
+
+//factory functions 

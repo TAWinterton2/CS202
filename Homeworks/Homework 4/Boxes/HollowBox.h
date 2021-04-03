@@ -3,6 +3,9 @@
 class HollowBox : public Box
 {
 public:
+	using Box::Box;
+
+
 	//default constructor 
 	HollowBox();
 
@@ -11,6 +14,9 @@ public:
 
 	//box type
 	string type();
+
+	//print 
+
 
 
 

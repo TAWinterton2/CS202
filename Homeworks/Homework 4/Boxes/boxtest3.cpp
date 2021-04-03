@@ -7,6 +7,12 @@
 // Includes for code to be tested
 #include "box.h"   // For class Box
 #include "box.h"   // Double inclusion test
+#include "FilledBox.h"
+#include "FilledBox.h"
+#include "HollowBox.h"
+#include "HollowBox.h"
+
+
 
 // Includes for testing package & code common to all test programs
 #include <iostream>     // for std::cout, std::endl, std::cin

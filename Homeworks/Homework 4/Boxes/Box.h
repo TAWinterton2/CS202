@@ -32,7 +32,6 @@ public:
 
 private:
 	int _width;
-
 	int _hieght;
 
 
