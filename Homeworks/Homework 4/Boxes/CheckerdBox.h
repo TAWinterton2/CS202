@@ -8,6 +8,13 @@ public:
 	//default constructor 
 	CheckeredBox();
 
+	//constructor w/ paramtersrs
+	CheckeredBox(int width, int hieght);
+
+	//box type
+	string type();
+
+
 
 
 };
