@@ -11,7 +11,7 @@ using std::endl;
 
 
 //default constructor 
-Box::Box(): _width(1), _hieght(1) {
+ Box::Box(): _width(1), _hieght(1) {
 
 }
 
@@ -19,15 +19,15 @@ Box::Box(): _width(1), _hieght(1) {
 int Box::getWidth() {
 	return(_width);
 }
-int Box::getHieght() {
+int Box::getHeight() {
 	return(_hieght);
 }
 
 //Mutator functions
-int Box::setWidth(int width ) {
+ int const Box::setWidth(int width ) {
 	_width = width;
 }
-int Box::setHieght(int hieght) {
+ int const Box::setHeight( int hieght) {
 	_hieght = hieght;
 }
 

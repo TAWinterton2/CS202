@@ -445,7 +445,7 @@ void test_class_Box_default_ctor(Tester & t)
     int i1;          // Holds width and height
 
     // Default construct const
-    const FilledBox con1;
+     FilledBox con1;
 
     // Check default constructed const width
     i1 = con1.getWidth();
@@ -459,7 +459,8 @@ void test_class_Box_default_ctor(Tester & t)
     s1 = con1.type();
     t.test(s1 == "Filled", "FilledBox, type");
 
-    const HollowBox con2;
+    //const 
+    HollowBox con2;
     const CheckeredBox con3;
 
     s1 = con2.type();
@@ -489,7 +490,7 @@ void test_class_Box_data_ctor(Tester & t)
     t.test(true, "Filled Ctor from data, two parameters");
 
     // Construct from data #1
-    const HollowBox con1(3,7);
+     HollowBox con1(3,7);
     t.test(true, "Hollow Ctor from data, three parameter");
 
     // Check constructed from data #1 type
@@ -505,7 +506,7 @@ void test_class_Box_data_ctor(Tester & t)
     t.test(i1 == 7, "Hollow Ctor from data, height");
 
     // Copy Construct
-    const HollowBox ccon1(con1);
+     HollowBox ccon1(con1);
     t.test(true, "HollowBox Copy Ctor");
 
     // Check constructed from data #1 type
@@ -521,7 +522,7 @@ void test_class_Box_data_ctor(Tester & t)
     t.test(i1 == 7, "Hollow Copy Ctor, height");
 
     // Construct from data #2 (const)
-    const FilledBox con2(4,2);
+     FilledBox con2(4,2);
 
     // Check constructed from data #2 type
     s1 = con2.type();
@@ -560,7 +561,7 @@ void test_class_Box_get_and_set_functions(Tester & t)
     bool typeCheck;  // Holds typecheck result
 
     FilledBox con1(4,5);
-    const FilledBox & con1r(con1);
+    FilledBox & con1r(con1);
     FilledBox con2(6,7);
 
     // setWidth parameter type

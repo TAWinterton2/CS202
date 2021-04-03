@@ -14,16 +14,16 @@ class Box
 
 public:
 	//default constructor
-	Box();
+	const Box();
 
 	//accessor functions
 	int getWidth();
 
-	int getHieght();
+	int getHeight();
 
 	//mutator functions 
-	int setWidth(int width);
-	int setHieght(int Height);
+	 int const setWidth( int width);
+	 int const setHeight( int Height);
 
 	//pure virtuals 
 	virtual void print(ostream& os);

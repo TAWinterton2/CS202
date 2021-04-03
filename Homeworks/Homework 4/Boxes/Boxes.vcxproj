@@ -140,12 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Box.h" />
+    <ClInclude Include="CheckerdBox.h" />
     <ClInclude Include="FilledBox.h" />
     <ClInclude Include="HollowBox.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="boxtest3.cpp" />
+    <ClCompile Include="CheckerdBox.cpp" />
     <ClCompile Include="FilledBox.cpp" />
     <ClCompile Include="HollowBox.cpp" />
   </ItemGroup>
