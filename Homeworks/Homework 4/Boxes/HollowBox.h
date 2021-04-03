@@ -16,7 +16,7 @@ public:
 	string type();
 
 	//print 
-
+	void print(ostream&);
 
 
 

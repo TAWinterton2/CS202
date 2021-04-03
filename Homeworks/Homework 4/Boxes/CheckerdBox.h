@@ -14,6 +14,8 @@ public:
 	//box type
 	string type();
 
+	//print
+	void print(ostream&);
 
 
 
