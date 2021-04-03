@@ -26,18 +26,23 @@ int Box::getHeight() {
 //Mutator functions
  int const Box::setWidth(int width ) {
 	_width = width;
+	return(width);
 }
  int const Box::setHeight( int hieght) {
 	_hieght = hieght;
+	return(hieght);
 }
 
 //pure virtuals
-void print(ostream& os){}
-string type(){}
+void Box::print(ostream& os){}
+
+string Box::type(){
+	return("this is a box");
+}
 
 
 //overloaded operators
-ostream& operator<< (ostream& os, const Box& box) {
+ostream& operator<< (ostream& os,  Box& box) {
 	box.print(os);
 	return os;
 }
