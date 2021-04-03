@@ -15,8 +15,9 @@ HollowBox::HollowBox() : Box(){
 
 
 //constructor w/ parameters
-HollowBox::HollowBox(int width, int height): Box(width, height) {
-
+HollowBox::HollowBox(int width, int height)  {
+	setWidth(width);
+	setHeight(height);
 }
 
 //type function 

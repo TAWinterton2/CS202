@@ -10,7 +10,8 @@ FilledBox::FilledBox(): Box() {
 
 //constructor
 FilledBox::FilledBox(int width, int height)   {
-	
+	setWidth(width);
+	setHeight(height);
 }
 
 //box type

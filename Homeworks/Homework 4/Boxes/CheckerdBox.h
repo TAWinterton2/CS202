@@ -1,12 +1,12 @@
 #pragma once
 #include "Box.h"
-class CheckerdBox : public Box
+class CheckeredBox : public Box
 {
 public:
 	using Box::Box;
 
 	//default constructor 
-	CheckerdBox();
+	CheckeredBox();
 
 
 
