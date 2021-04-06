@@ -7,14 +7,9 @@
 // Includes for code to be tested
 #include "box.h"   // For class Box
 #include "box.h"   // Double inclusion test
-#include "FilledBox.h"
+#include "CheckerdBox.h"
 #include "FilledBox.h"
 #include "HollowBox.h"
-#include "HollowBox.h"
-#include "CheckerdBox.h"
-#include "CheckerdBox.h"
-
-
 
 // Includes for testing package & code common to all test programs
 #include <iostream>     // for std::cout, std::endl, std::cin
@@ -45,7 +40,7 @@
 //     tolerance_ >= 0.
 class Tester {
 
-// ***** Tester: ctors, dctor, op= *****
+    // ***** Tester: ctors, dctor, op= *****
 public:
 
     // Default ctor
@@ -56,8 +51,8 @@ public:
     // Does not throw (No-Throw Guarantee)
     Tester(double theTolerance = 0.0000001)
         :countTests_(0),
-         countPasses_(0),
-         tolerance_(theTolerance >= 0 ? theTolerance : -theTolerance)
+        countPasses_(0),
+        tolerance_(theTolerance >= 0 ? theTolerance : -theTolerance)
     {}
 
     // Compiler-generated copy ctor, copy op=, dctor are used
@@ -76,7 +71,7 @@ public:
     // Does not throw (No-Throw Guarantee)
     //  - Assuming exceptions have not been turned on for cout.
     void test(bool success,
-              const std::string & testName = "")
+        const std::string& testName = "")
     {
         ++countTests_;
         if (success) ++countPasses_;
@@ -85,11 +80,11 @@ public:
         if (testName != "")
         {
             std::cout << "Test: "
-                      << testName
-                      << " - ";
+                << testName
+                << " - ";
         }
         std::cout << (success ? "passed" : "********** FAILED **********")
-                  << std::endl;
+            << std::endl;
     }
 
     // ftest
@@ -103,9 +98,11 @@ public:
     //      and pass/fail printed to cout
     // Does not throw (No-Throw Guarantee)
     void ftest(double val1,
-               double val2,
-               const std::string & testName = "")
-    { test(val1-val2 <= tolerance_ && val2-val1 <= tolerance_, testName); }
+        double val2,
+        const std::string& testName = "")
+    {
+        test(val1 - val2 <= tolerance_ && val2 - val1 <= tolerance_, testName);
+    }
 
     // reset
     // Resets *this to default constructed state
@@ -126,7 +123,9 @@ public:
     //     return == countTests_
     // Does not throw (No-Throw Guarantee)
     int numTests() const
-    { return countTests_; }
+    {
+        return countTests_;
+    }
 
     // numPassed
     // Returns the number of tests that have passed since last reset
@@ -135,7 +134,9 @@ public:
     //     return == countPasses_
     // Does not throw (No-Throw Guarantee)
     int numPassed() const
-    { return countPasses_; }
+    {
+        return countPasses_;
+    }
 
     // numFailed
     // Returns the number of tests that have not passed since last reset
@@ -144,7 +145,9 @@ public:
     //     return + countPasses_ == numTests_
     // Does not throw (No-Throw Guarantee)
     int numFailed() const
-    { return countTests_ - countPasses_; }
+    {
+        return countTests_ - countPasses_;
+    }
 
     // allPassed
     // Returns true if all tests since last reset have passed
@@ -153,7 +156,9 @@ public:
     //     return == (countPasses_ == countTests_)
     // Does not throw (No-Throw Guarantee)
     bool allPassed() const
-    { return countPasses_ == countTests_; }
+    {
+        return countPasses_ == countTests_;
+    }
 
     // setTolerance
     // Sets tolerance_ to given value
@@ -162,9 +167,11 @@ public:
     //     tolerance_ = abs(theTolerance)
     // Does not throw (No-Throw Guarantee)
     void setTolerance(double theTolerance)
-    { tolerance_ = (theTolerance >= 0 ? theTolerance : -theTolerance); }
+    {
+        tolerance_ = (theTolerance >= 0 ? theTolerance : -theTolerance);
+    }
 
-// ***** Tester: data members *****
+    // ***** Tester: data members *****
 private:
 
     int countTests_;    // Number of tests done since last reset
@@ -196,8 +203,8 @@ class TypeCheck {
 private:
 
     // Uncopyable class. Do not define copy ctor, copy assn.
-    TypeCheck(const TypeCheck &);
-    TypeCheck<T> & operator=(const TypeCheck &);
+    TypeCheck(const TypeCheck&);
+    TypeCheck<T>& operator=(const TypeCheck&);
 
     // Compiler-generated dctor is used (but irrelevant).
 
@@ -213,8 +220,10 @@ public:
     // Post:
     //     Return is true.
     // Does not throw (No-Throw Guarantee)
-    static bool check(const T & param)
-    { return true; }
+    static bool check(const T& param)
+    {
+        return true;
+    }
 
     // check (reference-to-const non-T)
     // Pre: None.
@@ -223,8 +232,10 @@ public:
     // Requirements on types: None.
     // Does not throw (No-Throw Guarantee)
     template <typename OtherType>
-    static bool check(const OtherType & param)
-    { return false; }
+    static bool check(const OtherType& param)
+    {
+        return false;
+    }
 
 };  // End class TypeCheck
 
@@ -261,7 +272,7 @@ public:
 //      assumed.
 class Counter {
 
-// ***** Counter: Ctors, dctor, op= *****
+    // ***** Counter: Ctors, dctor, op= *****
 public:
 
     // Default ctor
@@ -286,7 +297,7 @@ public:
     //     (existing_ has been incremented.)
     // May throw std::runtime_error
     // Strong Guarantee
-    Counter(const Counter & other)
+    Counter(const Counter& other)
     {
         if (copyThrow_)
             throw std::runtime_error("C");
@@ -304,7 +315,7 @@ public:
     //     (assnCount_ has been incremented.)
     // May throw std::runtime_error
     // Strong Guarantee
-    Counter & operator=(const Counter & rhs)
+    Counter& operator=(const Counter& rhs)
     {
         if (copyThrow_)
             throw std::runtime_error("A");
@@ -324,7 +335,7 @@ public:
         ++dctorCount_;
     }
 
-// ***** Counter: Functions dealing with count *****
+    // ***** Counter: Functions dealing with count *****
 public:
 
     // reset
@@ -351,7 +362,9 @@ public:
     //     return == existing_.
     // Does not throw (No-Throw Guarantee)
     static int getExisting()
-    { return existing_; }
+    {
+        return existing_;
+    }
 
     // getMaxExisting
     // Pre: None.
@@ -359,7 +372,9 @@ public:
     //     return == maxExisting_.
     // Does not throw (No-Throw Guarantee)
     static int getMaxExisting()
-    { return maxExisting_; }
+    {
+        return maxExisting_;
+    }
 
     // getCtorCount
     // Pre: None.
@@ -367,7 +382,9 @@ public:
     //     return == ctorCount_.
     // Does not throw (No-Throw Guarantee)
     static int getCtorCount()
-    { return ctorCount_; }
+    {
+        return ctorCount_;
+    }
 
     // getDctorCount
     // Pre: None.
@@ -375,7 +392,9 @@ public:
     //     return == dctorCount_.
     // Does not throw (No-Throw Guarantee)
     static int getDctorCount()
-    { return dctorCount_; }
+    {
+        return dctorCount_;
+    }
 
     // getAssnCount
     // Pre: None.
@@ -383,7 +402,9 @@ public:
     //     return == assnCount_.
     // Does not throw (No-Throw Guarantee)
     static int getAssnCount()
-    { return assnCount_; }
+    {
+        return assnCount_;
+    }
 
     // setCopyThrow
     // Pre: None.
@@ -391,9 +412,11 @@ public:
     //     copyThrow_ == shouldThrow
     // Does not throw (No-Throw Guarantee)
     static void setCopyThrow(bool shouldThrow)
-    { copyThrow_ = shouldThrow; }
+    {
+        copyThrow_ = shouldThrow;
+    }
 
-// ***** Counter: Data Members *****
+    // ***** Counter: Data Members *****
 private:
 
     static int existing_;     // # of existing objects
@@ -422,9 +445,11 @@ bool Counter::copyThrow_ = false;
 // Post:
 //     Return value == false.
 // Does not throw (No-Throw Guarantee)
-bool operator<(const Counter & a,
-               const Counter & b)
-{ return false; }
+bool operator<(const Counter& a,
+    const Counter& b)
+{
+    return false;
+}
 
 
 // ************************************************************************
@@ -439,7 +464,7 @@ bool operator<(const Counter & a,
 //     Pass/fail status of tests have been registered with t.
 //     Appropriate messages have been printed to cout.
 // Does not throw (No-Throw Guarantee)
-void test_class_Box_default_ctor(Tester & t)
+void test_class_Box_default_ctor(Tester& t)
 {
     std::cout << "Test Suite: class Box, default ctor" << std::endl;
 
@@ -447,7 +472,8 @@ void test_class_Box_default_ctor(Tester & t)
     int i1;          // Holds width and height
 
     // Default construct const
-     FilledBox con1;
+   // const 
+        FilledBox con1;
 
     // Check default constructed const width
     i1 = con1.getWidth();
@@ -461,10 +487,10 @@ void test_class_Box_default_ctor(Tester & t)
     s1 = con1.type();
     t.test(s1 == "Filled", "FilledBox, type");
 
-    //const 
-    HollowBox con2;
     //const
-       CheckeredBox con3;
+        HollowBox con2;
+    //const
+        CheckeredBox con3;
 
     s1 = con2.type();
     t.test(s1 == "Hollow", "HollowBox, type");
@@ -481,7 +507,7 @@ void test_class_Box_default_ctor(Tester & t)
 //     Pass/fail status of tests have been registered with t.
 //     Appropriate messages have been printed to cout.
 // Does not throw (No-Throw Guarantee)
-void test_class_Box_data_ctor(Tester & t)
+void test_class_Box_data_ctor(Tester& t)
 {
     std::cout << "Test Suite: class Box, ctor from data" << std::endl;
 
@@ -493,7 +519,8 @@ void test_class_Box_data_ctor(Tester & t)
     t.test(true, "Filled Ctor from data, two parameters");
 
     // Construct from data #1
-     HollowBox con1(3,7);
+    //const 
+        HollowBox con1(3, 7);
     t.test(true, "Hollow Ctor from data, three parameter");
 
     // Check constructed from data #1 type
@@ -509,7 +536,8 @@ void test_class_Box_data_ctor(Tester & t)
     t.test(i1 == 7, "Hollow Ctor from data, height");
 
     // Copy Construct
-     HollowBox ccon1(con1);
+    //const 
+        HollowBox ccon1(con1);
     t.test(true, "HollowBox Copy Ctor");
 
     // Check constructed from data #1 type
@@ -525,7 +553,8 @@ void test_class_Box_data_ctor(Tester & t)
     t.test(i1 == 7, "Hollow Copy Ctor, height");
 
     // Construct from data #2 (const)
-     FilledBox con2(4,2);
+    //const 
+        FilledBox con2(4, 2);
 
     // Check constructed from data #2 type
     s1 = con2.type();
@@ -540,8 +569,8 @@ void test_class_Box_data_ctor(Tester & t)
     t.test(i1 == 4, "Filled Ctor from data, const, width");
 
     // Construct from data #2 (const)
-    //const
-        CheckeredBox con3(2,2);
+   // const 
+        CheckeredBox con3(2, 2);
 
     // Check constructed from data #2 type
     s1 = con3.type();
@@ -556,7 +585,7 @@ void test_class_Box_data_ctor(Tester & t)
 //     Pass/fail status of tests have been registered with t.
 //     Appropriate messages have been printed to cout.
 // Does not throw (No-Throw Guarantee)
-void test_class_Box_get_and_set_functions(Tester & t)
+void test_class_Box_get_and_set_functions(Tester& t)
 {
     std::cout << "Test Suite: class Box, get and set functions (uses FilledBox)" << std::endl;
 
@@ -564,9 +593,10 @@ void test_class_Box_get_and_set_functions(Tester & t)
     int i1;          // Holds width and height
     bool typeCheck;  // Holds typecheck result
 
-    FilledBox con1(4,5);
-    FilledBox & con1r(con1);
-    FilledBox con2(6,7);
+    FilledBox con1(4, 5);
+    //const 
+        FilledBox& con1r(con1);
+    FilledBox con2(6, 7);
 
     // setWidth parameter type
     FilledBox con0;
@@ -616,7 +646,7 @@ void test_class_Box_get_and_set_functions(Tester & t)
 //     Pass/fail status of tests have been registered with t.
 //     Appropriate messages have been printed to cout.
 // Does not throw (No-Throw Guarantee)
-void test_class_Box_print(Tester & t)
+void test_class_Box_print(Tester& t)
 {
     std::cout << "Test Suite: class Box, print" << std::endl;
 
@@ -631,7 +661,7 @@ void test_class_Box_print(Tester & t)
     t.test(os.str() == "x\n", "print, default box");
 
     // Test #2 (const)
-    const FilledBox con2(4,3);
+    const FilledBox con2(4, 3);
 
     // Check print #2
     os.str(""); //reset output holder
@@ -639,15 +669,15 @@ void test_class_Box_print(Tester & t)
     t.test(os.str() == "xxxx\nxxxx\nxxxx\n", "print 4x3 box, const");
 
     // Test #3 (1x1 hollow)
-    HollowBox con3(1,1);
-    
+    HollowBox con3(1, 1);
+
     // Check print #3
     os.str(""); //reset output holder
     os << con3;
     t.test(os.str() == "x\n", "print 1x1 hollow box");
 
     // Test #4 (2x2 hollow)
-    HollowBox con4(2,2);
+    HollowBox con4(2, 2);
 
     // Check print #4
     os.str(""); //reset output holder
@@ -664,7 +694,7 @@ void test_class_Box_print(Tester & t)
     t.test(os.str() == "xxxxxxxx\nx      x\nxxxxxxxx\n", "print 8x3 hollow box");
 
     // Test #6 (2x2 checkered)
-    CheckeredBox con6(2,2);
+    CheckeredBox con6(2, 2);
 
     // Check print #6
     os.str(""); //reset output holder
@@ -672,18 +702,18 @@ void test_class_Box_print(Tester & t)
     t.test(os.str() == "x \n x\n", "print 2x2 checkered box");
 
     // Test #7 (5x3 checkered)
-   // std::unique_ptr<Box> bptr = boxFactory('c',5,3);
+   // std::unique_ptr<Box> bptr = boxFactory('c', 5, 3);
 
     // Check print #7
     os.str(""); //reset output holder
-   // bptr->print(os);
+    //bptr->print(os);
     t.test(os.str() == "x x x\n x x \nx x x\n", "print 5x3 checkered box from factory");
 
     // Check pring #8
-  //  bptr = boxFactory('h',8,3);
+  // bptr = boxFactory('h', 8, 3);
     // Check boxFactory hollow
     os.str(""); //reset output holder
-    //os << *bptr << "test";
+  //  os << *bptr << "test";
     t.test(os.str() == "xxxxxxxx\nx      x\nxxxxxxxx\ntest", "print 8x3 hollow box from factory using cascaded <<");
 }
 
@@ -695,7 +725,7 @@ public:
     }
 };
 
-bool dBox::destructedAny=false;
+bool dBox::destructedAny = false;
 
 // test_class_Box_virtual_destructor
 // Test suite for class Box, virtual destructor
@@ -704,12 +734,12 @@ bool dBox::destructedAny=false;
 //     Pass/fail status of tests have been registered with t.
 //     Appropriate messages have been printed to cout.
 // Does not throw (No-Throw Guarantee)
-void test_class_Box_virtual_destructor(Tester & t)
+void test_class_Box_virtual_destructor(Tester& t)
 {
     {
         std::unique_ptr<Box>(new dBox);
     }
-    t.test(dBox::destructedAny,"Box class has virtual destructor.");
+    t.test(dBox::destructedAny, "Box class has virtual destructor.");
 }
 
 // test_class_Box
@@ -720,7 +750,7 @@ void test_class_Box_virtual_destructor(Tester & t)
 //     Pass/fail status of tests have been registered with t.
 //     Appropriate have been messages printed to cout.
 // Does not throw (No-Throw Guarantee)
-void test_class_Box(Tester & t)
+void test_class_Box(Tester& t)
 {
     // Do all the test suites
     std::cout << "TEST SUITES FOR CLASS Box" << std::endl;
@@ -747,18 +777,18 @@ int main()
     std::cout << std::endl;
     if (t.allPassed())
     {
-        std::cout << "All tests successful" 
-                  << std::endl;
+        std::cout << "All tests successful"
+            << std::endl;
     }
     else
     {
         std::cout << "Tests ********** UNSUCCESSFUL **********"
-                  << std::endl;
+            << std::endl;
     }
     std::cout << std::endl;
 
     std::cout << "Press ENTER to quit ";
-    while (std::cin.get() != '\n') ;
+    while (std::cin.get() != '\n');
 
     return 0;
 }
