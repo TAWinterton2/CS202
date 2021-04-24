@@ -9,7 +9,6 @@
 #include<chrono>
 #include<vector>
 
-
 using std::endl;
 using std::cout;
 using std::string;
