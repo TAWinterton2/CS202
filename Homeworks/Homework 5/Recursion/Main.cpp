@@ -47,7 +47,7 @@ int ack(int m, int n) {
 
 int main() {
 	
-	
+	Stopwatch timer;
 
 	int j = 0;
 
@@ -70,11 +70,15 @@ int main() {
 
 	//Ackermann Test
 	std::cout << "Ackermann Function Test " << std::endl;
+	
 	int A;
 
-	A = ack(1, 2);
+	timer.Start();
+	A = ack(1, 6);
+	timer.Stop();
+
 	std::cout << A << std::endl;
-	
+	timer.Time_Seconds();
 
 	return 0;
 
