@@ -17,13 +17,24 @@ using std::ios;
 using std::fstream;
 
 int main() {
-	ofstream fout("testdoc.dat", ios::binary | ios::out);
-
-	auto writex = 5.5;
-	int readx;
 
 
-	myWrite(fout, writex);
+	ofstream ofile("numbers.dat");
+	double d = 13.3;
+	myWrite(ofile, d);
+	int x = 5;
+	myWrite(ofile, x);
+
+
+	ifstream ifile("numbers.dat");
+	double readd = 0;
+	int readx = 0;
+
+	cout << myRead(ifile, readd);
+
+	cout << std::endl;
+
+	cout << myRead(ifile, readx);
 
 	
 
