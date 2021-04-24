@@ -6,7 +6,10 @@
 
 // class invariant:
 // _denominator is always > 0
+template <typename t>
 class Rational {
+	template<typename U>
+
 	friend std::ostream& operator<<(std::ostream&, const Rational& rhs);
 	friend Rational operator+(const Rational& lhs, const Rational& rhs);
 	friend Rational operator-(const Rational& lhs);
@@ -29,6 +32,7 @@ private:
 	int _numerator;
 	int _denominator;
 };
+
 
 Rational operator-(const Rational& lhs, const Rational& rhs);
 Rational operator*(Rational lhs, const Rational& rhs);
