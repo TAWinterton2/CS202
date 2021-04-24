@@ -24,17 +24,21 @@ using std::fstream;
 template <typename T>
 T myWrite(ofstream & f, T t) {
 	f.write(reinterpret_cast<const char *> (&t), sizeof(t));
-	return 0;
+	f.close();
+	return 1;
 }
 
 int myWrite(ofstream& f, int t) {
 	f.write(reinterpret_cast<const char*> (&t), sizeof(t));
-	return 0;
+	f.close();
+	return 1;
+
 }
 
 double myWrite(ofstream& f, double t) {
 	f.write(reinterpret_cast<const char*> (&t), sizeof(double));
-	return 0;
+	f.close();
+	return 1;
 }
 
 

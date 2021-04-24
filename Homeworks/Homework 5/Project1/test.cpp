@@ -19,22 +19,12 @@ using std::fstream;
 int main() {
 	ofstream fout("testdoc.dat", ios::binary | ios::out);
 
-	int writex = 5;
+	auto writex = 5.5;
 	int readx;
 
 
 	myWrite(fout, writex);
 
-	ifstream  fin("testdoc.dat", ios::binary | ios::in);
-	if (!fin) {
-		cout << "Error finding file" << std::endl;
-		return 0;
-	}
-	else
-	{
-		fin.read(reinterpret_cast<char*>(&readx), sizeof(int));
-		cout << readx;
-	}
 	
 
 	return 0;
