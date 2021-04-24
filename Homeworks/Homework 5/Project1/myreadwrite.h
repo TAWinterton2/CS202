@@ -21,9 +21,17 @@ using std::ios;
 
 //template for myWrite
 template <typename T>
-T myWrite{ T x, T y }{
+T myWrite(T t, T t2) {
 
 }
+
+//template for myRead
+template <typename T>
+T myRead(T t, T t2) {
+
+}
+
+
 
 
 
