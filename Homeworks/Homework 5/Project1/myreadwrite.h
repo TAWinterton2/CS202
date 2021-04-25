@@ -22,21 +22,22 @@ using std::fstream;
 
 //template for myWrite
 template <typename T>
-T myWrite(ofstream & f, T t) {
-	f.write(reinterpret_cast<const char *> (&t), sizeof(t));
+T myWrite(ofstream & f, T &t) {
+	f(ios::binary | ios::in);
+	f.write(reinterpret_cast<const char *> (&t), sizeof(T));
 	f.close();
 	return 0;
 }
 
 //template specializations for myWrite 
-int myWrite(ofstream& f, const int t) {
+int myWrite(ofstream& f,  int &t) {
 	f.write(reinterpret_cast<const char*> (&t), sizeof(int));
 	f.close();
 	return 0;
 
 }
 
-double myWrite(ofstream& f, const double t) {
+double myWrite(ofstream& f,  double &t) {
 	f.write(reinterpret_cast<const char*> (&t), sizeof(double));
 	f.close();
 	return 0;
@@ -47,22 +48,22 @@ double myWrite(ofstream& f, const double t) {
 
 //template for myRead
 template <typename T>
-T myRead(ifstream &f, T t) {
+T myRead(ifstream &f, T &t ) {
 	f.read(reinterpret_cast<char*>(&t), sizeof(t));
 	f.close();
 	return t;
 }
 
 //template specializatoins for myRead
-int myRead(ifstream& f, int t) {
+int myRead(ifstream& f, int &t) {
 	f.read(reinterpret_cast<char*>(&t), sizeof(int));
 	f.close();
 	return t;
 }
 
-double myRead(ifstream& f, double t) {
+double myRead(ifstream& f, double &t) {
 	
-	f.read(reinterpret_cast<char*>(&t), sizeof(double));
+	f.read(reinterpret_cast<char*>(&t), sizeof(t));
 	f.close();
 	return t;
 }

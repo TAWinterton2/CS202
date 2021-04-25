@@ -27,7 +27,7 @@ int main() {
 
 
 	ifstream ifile("numbers.dat");
-	double readd = 0;
+	double readd = 11.1;
 	int readx = 0;
 
 	cout << myRead(ifile, readd);
